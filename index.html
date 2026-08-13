@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>80th Independence Day 2026 ID Card Maker</title>
+
+<meta name="description"
+content="Create your personalized 80th Independence Day 2026 ID card. Add your name and photo.">
+
+<meta property="og:title"
+content="🇮🇳 80th Independence Day 2026 ID Card Maker">
+
+<meta property="og:description"
+content="Add your photo and name and create your patriotic Independence Day card.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(135deg,#fff8f0,#f3faf3);
+color:#172033;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px 14px 40px;
+}
+
+header{
+text-align:center;
+margin-bottom:20px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:30px;
+background:white;
+border:1px solid #e3e8ef;
+font-size:12px;
+font-weight:bold;
+color:#000080;
+}
+
+h1{
+font-size:clamp(28px,5vw,44px);
+margin:12px 0 6px;
+}
+
+header p{
+color:#687386;
+margin:0;
+}
+
+.app{
+display:grid;
+grid-template-columns:320px 1fr;
+gap:20px;
+}
+
+.panel,
+.preview{
+background:white;
+border:1px solid #e1e7ef;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(20,35,60,.08);
+}
+
+.panel{
+padding:20px;
+}
+
+.panel h2{
+margin:0 0 15px;
+font-size:19px;
+}
+
+label{
+display:block;
+font-size:13px;
+font-weight:bold;
+margin:14px 0 7px;
+}
+
+input[type=text]{
+width:100%;
+padding:13px;
+border:1px solid #d5dce6;
+border-radius:11px;
+font-size:16px;
+}
+
+input[type=text]:focus{
+outline:2px solid rgba(0,0,128,.12);
+border-color:#000080;
+}
+
+.upload{
+padding:16px;
+border:2px dashed #ccd5e1;
+border-radius:14px;
+text-align:center;
+cursor:pointer;
+background:#fafbfd;
+}
+
+.upload strong{
+display:block;
+margin-bottom:4px;
+}
+
+.upload small{
+color:#687386;
+}
+
+input[type=file]{
+display:none;
+}
+
+.actions{
+display:grid;
+gap:10px;
+margin-top:18px;
+}
+
+button{
+border:0;
+border-radius:11px;
+padding:14px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.download{
+background:linear-gradient(135deg,#ff9933,#f47721);
+color:white;
+}
+
+.reset{
+background:#edf1f6;
+color:#172033;
+}
+
+.hint{
+font-size:12px;
+color:#687386;
+line-height:1.5;
+}
+
+.preview{
+padding:12px;
+}
+
+.canvasbox{
+border-radius:14px;
+overflow:hidden;
+background:#eee;
+}
+
+canvas{
+display:block;
+width:100%;
+height:auto;
+}
+
+.note{
+text-align:center;
+font-size:12px;
+color:#687386;
+margin-top:8px;
+}
+
+@media(max-width:780px){
+
+.app{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="badge">
+🇮🇳 15 AUGUST 2026 • 80TH INDEPENDENCE DAY
+</div>
+
+<h1>
+Independence Day ID Card Maker
+</h1>
+
+<p>
+Create your own patriotic card in seconds.
+</p>
+
+</header>
+
+
+<div class="app">
+
+<section class="panel">
+
+<h2>
+Personalize Your Card
+</h2>
+
+<label>
+Name
+</label>
+
+<input
+id="name"
+type="text"
+maxlength="30"
+placeholder="Enter your name"
+>
+
+
+<label>
+Photo
+</label>
+
+<label
+class="upload"
+for="photo"
+>
+
+<strong>
+📷 Choose Your Photo
+</strong>
+
+<small>
+JPG, PNG or WebP
+</small>
+
+</label>
+
+<input
+id="photo"
+type="file"
+accept="image/*"
+>
+
+
+<div class="actions">
+
+<button
+class="download"
+id="download"
+>
+⬇ Download ID Card
+</button>
+
+<button
+class="reset"
+id="reset"
+>
+↻ Reset
+</button>
+
+</div>
+
+
+<p class="hint">
+Your photo is processed only in your browser.
+It is not uploaded by this app.
+</p>
+
+</section>
+
+
+<section class="preview">
+
+<div class="canvasbox">
+
+<canvas
+id="card"
+width="1200"
+height="700"
+></canvas>
+
+</div>
+
+<div class="note">
+1200 × 700 px • Ready for Facebook, WhatsApp and Instagram
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+
+<script>
+
+const canvas =
+document.getElementById("card");
+
+const ctx =
+canvas.getContext("2d");
+
+const nameInput =
+document.getElementById("name");
+
+const photoInput =
+document.getElementById("photo");
+
+let userPhoto = null;
+
+
+/* Rounded rectangle */
+
+function roundedRect(x,y,w,h,r){
+
+ctx.beginPath();
+
+ctx.moveTo(x+r,y);
+
+ctx.arcTo(
+x+w,y,
+x+w,y+h,
+r
+);
+
+ctx.arcTo(
+x+w,y+h,
+x,y+h,
+r
+);
+
+ctx.arcTo(
+x,y+h,
+x,y,
+r
+);
+
+ctx.arcTo(
+x,y,
+x+w,y,
+r
+);
+
+ctx.closePath();
+
+}
+
+
+/* Indian Flag */
+
+function drawFlag(x,y,w,h){
+
+ctx.save();
+
+roundedRect(x,y,w,h,12);
+
+ctx.clip();
+
+
+/* Saffron */
+
+ctx.fillStyle="#FF9933";
+
+ctx.fillRect(
+x,
+y,
+w,
+h/3
+);
+
+
+/* White */
+
+ctx.fillStyle="#FFFFFF";
+
+ctx.fillRect(
+x,
+y+h/3,
+w,
+h/3
+);
+
+
+/* Green */
+
+ctx.fillStyle="#138808";
+
+ctx.fillRect(
+x,
+y+(h*2/3),
+w,
+h/3
+);
+
+
+/* Ashoka Chakra */
+
+const cx=x+w/2;
+const cy=y+h/2;
+const r=Math.min(w,h)*0.18;
+
+ctx.strokeStyle="#000080";
+
+ctx.lineWidth=5;
+
+ctx.beginPath();
+
+ctx.arc(
+cx,
+cy,
+r,
+0,
+Math.PI*2
+);
+
+ctx.stroke();
+
+
+ctx.lineWidth=2;
+
+for(
+let i=0;
+i<24;
+i++
+){
+
+const angle=
+i*Math.PI*2/24;
+
+ctx.beginPath();
+
+ctx.moveTo(
+cx,
+cy
+);
+
+ctx.lineTo(
+cx+Math.cos(angle)*r,
+cy+Math.sin(angle)*r
+);
+
+ctx.stroke();
+
+}
+
+ctx.restore();
+
+}
+
+
+/* Draw Card */
+
+function drawCard(){
+
+const W=1200;
+const H=700;
+
+
+/* Background */
+
+ctx.clearRect(
+0,
+0,
+W,
+H
+);
+
+const bg=
+ctx.createLinearGradient(
+0,
+0,
+W,
+H
+);
+
+bg.addColorStop(
+0,
+"#fff9f3"
+);
+
+bg.addColorStop(
+0.5,
+"#ffffff"
+);
+
+bg.addColorStop(
+1,
+"#f2faf2"
+);
+
+ctx.fillStyle=bg;
+
+ctx.fillRect(
+0,
+0,
+W,
+H
+);
+
+
+/* Top and bottom tricolor */
+
+ctx.fillStyle="#FF9933";
+
+ctx.fillRect(
+0,
+0,
+W,
+14
+);
+
+ctx.fillStyle="#138808";
+
+ctx.fillRect(
+0,
+H-14,
+W,
+14
+);
+
+
+/* Header */
+
+ctx.fillStyle="#172033";
+
+ctx.font=
+"bold 42px Arial";
+
+ctx.fillText(
+"80TH INDEPENDENCE DAY",
+60,
+78
+);
+
+
+ctx.fillStyle="#000080";
+
+ctx.font=
+"bold 22px Arial";
+
+ctx.fillText(
+"15 AUGUST 2026",
+60,
+112
+);
+
+
+/* Flag */
+
+drawFlag(
+60,
+150,
+410,
+235
+);
+
+
+/* Proud message */
+
+ctx.fillStyle="#172033";
+
+ctx.font=
+"bold 30px Arial";
+
+ctx.fillText(
+"PROUD TO BE AN INDIAN",
+60,
+430
+);
+
+
+ctx.fillStyle="#687386";
+
+ctx.font=
+"19px Arial";
+
+ctx.fillText(
+"Celebrating the spirit, unity and pride of India",
+60,
+463
+);
+
+
+/* Photo */
+
+const px=790;
+const py=140;
+const pw=320;
+const ph=275;
+
+ctx.save();
+
+roundedRect(
+px,
+py,
+pw,
+ph,
+25
+);
+
+ctx.clip();
+
+
+if(userPhoto){
+
+const scale=
+Math.max(
+pw/userPhoto.width,
+ph/userPhoto.height
+);
+
+const sw=
+userPhoto.width*scale;
+
+const sh=
+userPhoto.height*scale;
+
+ctx.drawImage(
+userPhoto,
+px+(pw-sw)/2,
+py+(ph-sh)/2,
+sw,
+sh
+);
+
+}else{
+
+ctx.fillStyle="#e5eaf0";
+
+ctx.fillRect(
+px,
+py,
+pw,
+ph
+);
+
+ctx.fillStyle="#7d8998";
+
+ctx.font=
+"bold 25px Arial";
+
+ctx.textAlign="center";
+
+ctx.fillText(
+"YOUR PHOTO",
+px+pw/2,
+py+ph/2
+);
+
+ctx.textAlign="left";
+
+}
+
+ctx.restore();
+
+
+/* Photo border */
+
+ctx.strokeStyle="#ffffff";
+
+ctx.lineWidth=8;
+
+roundedRect(
+px,
+py,
+pw,
+ph,
+25
+);
+
+ctx.stroke();
+
+
+/* Name */
+
+const personName=
+nameInput.value.trim() ||
+"YOUR NAME";
+
+ctx.fillStyle="#000080";
+
+ctx.font=
+"bold 34px Arial";
+
+ctx.textAlign="center";
+
+ctx.fillText(
+personName.toUpperCase(),
+px+pw/2,
+465
+);
+
+
+/* Bottom message */
+
+ctx.fillStyle="#172033";
+
+ctx.font=
+"bold 31px Arial";
+
+ctx.fillText(
+"Happy 80th Independence Day!",
+600,
+570
+);
+
+
+ctx.fillStyle="#138808";
+
+ctx.font=
+"bold 30px Arial";
+
+ctx.fillText(
+"I Love My India.",
+600,
+618
+);
+
+
+ctx.textAlign="left";
+
+
+/* Tricolor decoration */
+
+const lx=470;
+const ly=648;
+const lw=260;
+
+ctx.fillStyle="#FF9933";
+
+ctx.fillRect(
+lx,
+ly,
+lw/3,
+7
+);
+
+ctx.fillStyle="#000080";
+
+ctx.fillRect(
+lx+lw/3,
+ly,
+lw/3,
+7
+);
+
+ctx.fillStyle="#138808";
+
+ctx.fillRect(
+lx+(lw*2/3),
+ly,
+lw/3,
+7
+);
+
+}
+
+
+/* Name typing */
+
+nameInput.addEventListener(
+"input",
+drawCard
+);
+
+
+/* Photo */
+
+photoInput.addEventListener(
+"change",
+function(event){
+
+const file=
+event.target.files[0];
+
+if(!file){
+return;
+}
+
+const reader=
+new FileReader();
+
+reader.onload=
+function(e){
+
+const image=
+new Image();
+
+image.onload=
+function(){
+
+userPhoto=image;
+
+drawCard();
+
+};
+
+image.src=
+e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+);
+
+
+/* Reset */
+
+document
+.getElementById("reset")
+.addEventListener(
+"click",
+function(){
+
+nameInput.value="";
+
+photoInput.value="";
+
+userPhoto=null;
+
+drawCard();
+
+}
+);
+
+
+/* Download */
+
+document
+.getElementById("download")
+.addEventListener(
+"click",
+function(){
+
+const link=
+document.createElement("a");
+
+const person=
+nameInput.value.trim() ||
+"My-Card";
+
+link.download=
+person.replace(
+/[^a-z0-9]+/gi,
+"-"
+)
++
+"-80th-Independence-Day-2026.png";
+
+link.href=
+canvas.toDataURL(
+"image/png"
+);
+
+document.body.appendChild(link);
+
+link.click();
+
+document.body.removeChild(link);
+
+}
+);
+
+
+/* Initial card */
+
+drawCard();
+
+</script>
+
+</body>
+</html>
