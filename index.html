@@ -7,7 +7,7 @@
 <title>80th Independence Day 2026 Photo Maker 🇮🇳</title>
 
 <meta name="description"
-content="Create your personalized 80th Independence Day 2026 ID card with your name and photo. Free to use.">
+content="Create your personalized 80th Independence Day 2026 card with your name and photo.">
 
 <meta property="og:title"
 content="🇮🇳 80th Independence Day 2026 Photo Maker">
@@ -90,7 +90,8 @@ font-weight:bold;
 margin:14px 0 7px;
 }
 
-input[type=text]{
+input[type=text],
+input[type=number]{
 width:100%;
 padding:13px;
 border:1px solid #d5dce6;
@@ -98,7 +99,7 @@ border-radius:11px;
 font-size:16px;
 }
 
-input[type=text]:focus{
+input:focus{
 outline:2px solid rgba(0,0,128,.12);
 border-color:#000080;
 }
@@ -151,24 +152,10 @@ background:#edf1f6;
 color:#172033;
 }
 
-.donate{
-display:block;
-text-align:center;
-text-decoration:none;
-background:linear-gradient(135deg,#138808,#0b6b06);
-color:white;
-box-shadow:0 6px 15px rgba(19,136,8,.18);
-}
-
-.donate:hover{
-opacity:.92;
-transform:translateY(-1px);
-}
-
 .support{
 margin-top:18px;
-padding:16px;
-border-radius:15px;
+padding:17px;
+border-radius:16px;
 background:linear-gradient(135deg,#fff8ed,#f4fff3);
 border:1px solid #e5eadf;
 text-align:center;
@@ -177,7 +164,6 @@ text-align:center;
 .support-title{
 font-size:18px;
 font-weight:bold;
-color:#172033;
 margin-bottom:8px;
 }
 
@@ -185,13 +171,50 @@ margin-bottom:8px;
 font-size:13px;
 line-height:1.55;
 color:#596579;
-margin:6px 0;
+margin:7px 0;
+}
+
+.upi-buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:14px;
+}
+
+.upi-btn{
+border:0;
+border-radius:10px;
+padding:12px 8px;
+background:linear-gradient(135deg,#138808,#0b6b06);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.upi-btn:hover{
+opacity:.9;
+}
+
+.custom-box{
+margin-top:10px;
+display:none;
+}
+
+.custom-box input{
+margin-bottom:8px;
+}
+
+.custom-pay{
+width:100%;
+background:#000080;
+color:white;
 }
 
 .upi-note{
 font-size:11px;
 color:#7b8492;
-margin-top:8px;
+margin-top:10px;
+line-height:1.4;
 }
 
 .hint{
@@ -240,14 +263,6 @@ color:#000080;
 
 .app{
 grid-template-columns:1fr;
-}
-
-.panel{
-order:1;
-}
-
-.preview{
-order:2;
 }
 
 }
@@ -340,21 +355,20 @@ id="reset"
 ↻ Reset
 </button>
 
-<a
-class="donate"
-href="upi://pay?pa=shankarsp25-3@okaxis&pn=Shankar&cu=INR"
->
-❤️ Support My Effort • मेरी मेहनत को Support करें
-</a>
-
 </div>
 
+
+<!-- SUPPORT SECTION -->
 
 <div class="support">
 
 <div class="support-title">
-🇮🇳 एक छोटी सी कोशिश • A Small Effort ❤️
+❤️ Support My Effort
 </div>
+
+<p>
+🇮🇳 <b>एक छोटी सी कोशिश • A Small Effort</b>
+</p>
 
 <p>
 मैंने इस app को अपने समय, मेहनत और creativity से बनाया है।
@@ -368,19 +382,94 @@ If you enjoyed using it, you can support my work with a small voluntary contribu
 Every bit of encouragement means a lot. ❤️
 </p>
 
+
+<div class="upi-buttons">
+
+<button
+class="upi-btn"
+onclick="payUPI(10)"
+>
+❤️ ₹10
+</button>
+
+<button
+class="upi-btn"
+onclick="payUPI(20)"
+>
+❤️ ₹20
+</button>
+
+<button
+class="upi-btn"
+onclick="payUPI(50)"
+>
+❤️ ₹50
+</button>
+
+<button
+class="upi-btn"
+onclick="payUPI(100)"
+>
+❤️ ₹100
+</button>
+
+</div>
+
+
+<button
+class="upi-btn"
+style="margin-top:8px;width:100%;"
+onclick="showCustomAmount()"
+>
+💝 Custom Amount
+</button>
+
+
+<div
+id="customBox"
+class="custom-box"
+>
+
+<input
+id="customAmount"
+type="number"
+min="1"
+max="100000"
+placeholder="Enter amount ₹"
+>
+
+<button
+class="custom-pay"
+onclick="payCustom()"
+>
+❤️ Support with This Amount
+</button>
+
+</div>
+
+
 <div class="upi-note">
-UPI Support is completely voluntary • कोई payment जरूरी नहीं है
+
+UPI Support is completely voluntary.
+<br>
+
+कोई payment जरूरी नहीं है। आपका support मेरी मेहनत के लिए प्रेरणा है। ❤️
+
 </div>
 
 </div>
 
 
 <p class="hint">
+
 🔒 आपकी photo केवल आपके browser में process होती है।
 यह app आपकी photo को किसी server पर upload नहीं करता।
+
 <br><br>
+
 🔒 Your photo is processed only in your browser.
 It is not uploaded to any server by this app.
+
 </p>
 
 </section>
@@ -410,10 +499,16 @@ height="700"
 <div class="footer">
 
 🇮🇳 <strong>Happy 80th Independence Day 2026</strong> 🇮🇳
+
 <br>
+
 Made with ❤️ and मेहनत
+
 <br>
-<strong>Jai Hind • जय हिंद • वंदे मातरम्</strong>
+
+<strong>
+Jai Hind • जय हिंद • वंदे मातरम्
+</strong>
 
 </div>
 
@@ -421,6 +516,87 @@ Made with ❤️ and मेहनत
 
 
 <script>
+
+
+/* =========================
+   UPI PAYMENT
+========================= */
+
+const UPI_ID = "shankarsp25-3@okaxis";
+
+const UPI_NAME = "Shankar";
+
+
+function payUPI(amount){
+
+if(!amount || amount <= 0){
+return;
+}
+
+const upiURL =
+"upi://pay" +
+"?pa=" + encodeURIComponent(UPI_ID) +
+"&pn=" + encodeURIComponent(UPI_NAME) +
+"&am=" + encodeURIComponent(amount.toFixed(2)) +
+"&cu=INR";
+
+window.location.href = upiURL;
+
+}
+
+
+function showCustomAmount(){
+
+const box =
+document.getElementById("customBox");
+
+box.style.display =
+box.style.display === "block"
+? "none"
+: "block";
+
+}
+
+
+function payCustom(){
+
+const input =
+document.getElementById("customAmount");
+
+const amount =
+parseFloat(input.value);
+
+if(
+!amount ||
+amount < 1
+){
+
+alert(
+"Please enter a valid amount.\nकृपया सही राशि दर्ज करें।"
+);
+
+return;
+
+}
+
+if(amount > 100000){
+
+alert(
+"Maximum amount is ₹100,000."
+);
+
+return;
+
+}
+
+payUPI(amount);
+
+}
+
+
+/* =========================
+   CARD MAKER
+========================= */
 
 const canvas =
 document.getElementById("card");
@@ -485,6 +661,8 @@ roundedRect(x,y,w,h,12);
 ctx.clip();
 
 
+/* Saffron */
+
 ctx.fillStyle="#FF9933";
 
 ctx.fillRect(
@@ -495,6 +673,8 @@ h/3
 );
 
 
+/* White */
+
 ctx.fillStyle="#FFFFFF";
 
 ctx.fillRect(
@@ -504,6 +684,8 @@ w,
 h/3
 );
 
+
+/* Green */
 
 ctx.fillStyle="#138808";
 
@@ -545,7 +727,7 @@ i<24;
 i++
 ){
 
-const angle=
+const angle =
 i*Math.PI*2/24;
 
 ctx.beginPath();
@@ -577,6 +759,8 @@ const W=1200;
 const H=700;
 
 
+/* Background */
+
 ctx.clearRect(
 0,
 0,
@@ -584,10 +768,7 @@ W,
 H
 );
 
-
-/* Background */
-
-const bg=
+const bg =
 ctx.createLinearGradient(
 0,
 0,
@@ -620,7 +801,7 @@ H
 );
 
 
-/* Tricolor borders */
+/* Top and bottom tricolor */
 
 ctx.fillStyle="#FF9933";
 
@@ -720,18 +901,19 @@ ph,
 
 ctx.clip();
 
+
 if(userPhoto){
 
-const scale=
+const scale =
 Math.max(
 pw/userPhoto.width,
 ph/userPhoto.height
 );
 
-const sw=
+const sw =
 userPhoto.width*scale;
 
-const sh=
+const sh =
 userPhoto.height*scale;
 
 ctx.drawImage(
@@ -792,7 +974,7 @@ ctx.stroke();
 
 /* Name */
 
-const personName=
+const personName =
 nameInput.value.trim() ||
 "YOUR NAME";
 
@@ -881,29 +1063,29 @@ drawCard
 );
 
 
-/* Photo */
+/* Photo upload */
 
 photoInput.addEventListener(
 "change",
 function(event){
 
-const file=
+const file =
 event.target.files[0];
 
 if(!file){
 return;
 }
 
-const reader=
+const reader =
 new FileReader();
 
-reader.onload=
+reader.onload =
 function(e){
 
-const image=
+const image =
 new Image();
 
-image.onload=
+image.onload =
 function(){
 
 userPhoto=image;
@@ -912,7 +1094,7 @@ drawCard();
 
 };
 
-image.src=
+image.src =
 e.target.result;
 
 };
@@ -951,14 +1133,14 @@ document
 "click",
 function(){
 
-const link=
+const link =
 document.createElement("a");
 
-const person=
+const person =
 nameInput.value.trim() ||
 "My-Card";
 
-link.download=
+link.download =
 person.replace(
 /[^a-z0-9]+/gi,
 "-"
@@ -966,7 +1148,7 @@ person.replace(
 +
 "-80th-Independence-Day-2026.png";
 
-link.href=
+link.href =
 canvas.toDataURL(
 "image/png"
 );
@@ -989,4 +1171,3 @@ drawCard();
 
 </body>
 </html>
-
