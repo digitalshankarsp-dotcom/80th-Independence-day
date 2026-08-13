@@ -16,6 +16,7 @@ content="🇮🇳 80th Independence Day 2026 ID Card Maker">
 content="Add your photo and name and create your patriotic Independence Day card.">
 
 <style>
+
 *{
 box-sizing:border-box;
 }
@@ -130,7 +131,8 @@ gap:10px;
 margin-top:18px;
 }
 
-button{
+button,
+.donate{
 border:0;
 border-radius:11px;
 padding:14px;
@@ -147,6 +149,18 @@ color:white;
 .reset{
 background:#edf1f6;
 color:#172033;
+}
+
+.donate{
+display:block;
+text-align:center;
+text-decoration:none;
+background:linear-gradient(135deg,#138808,#0b6b06);
+color:white;
+}
+
+.donate:hover{
+opacity:.9;
 }
 
 .hint{
@@ -185,6 +199,7 @@ grid-template-columns:1fr;
 }
 
 }
+
 </style>
 </head>
 
@@ -208,7 +223,6 @@ Create your own patriotic card in seconds.
 
 </header>
 
-
 <div class="app">
 
 <section class="panel">
@@ -227,7 +241,6 @@ type="text"
 maxlength="30"
 placeholder="Enter your name"
 >
-
 
 <label>
 Photo
@@ -254,7 +267,6 @@ type="file"
 accept="image/*"
 >
 
-
 <div class="actions">
 
 <button
@@ -271,8 +283,14 @@ id="reset"
 ↻ Reset
 </button>
 
-</div>
+<a
+class="donate"
+href="upi://pay?pa=shankarsp25-3@okaxis&pn=Shankar&cu=INR"
+>
+❤️ Support Us via UPI
+</a>
 
+</div>
 
 <p class="hint">
 Your photo is processed only in your browser.
@@ -280,7 +298,6 @@ It is not uploaded by this app.
 </p>
 
 </section>
-
 
 <section class="preview">
 
@@ -303,7 +320,6 @@ height="700"
 </div>
 
 </div>
-
 
 <script>
 
@@ -428,7 +444,6 @@ Math.PI*2
 
 ctx.stroke();
 
-
 ctx.lineWidth=2;
 
 for(
@@ -545,7 +560,6 @@ ctx.fillText(
 78
 );
 
-
 ctx.fillStyle="#000080";
 
 ctx.font=
@@ -581,7 +595,6 @@ ctx.fillText(
 430
 );
 
-
 ctx.fillStyle="#687386";
 
 ctx.font=
@@ -612,7 +625,6 @@ ph,
 );
 
 ctx.clip();
-
 
 if(userPhoto){
 
@@ -717,7 +729,6 @@ ctx.fillText(
 570
 );
 
-
 ctx.fillStyle="#138808";
 
 ctx.font=
@@ -728,7 +739,6 @@ ctx.fillText(
 600,
 618
 );
-
 
 ctx.textAlign="left";
 
