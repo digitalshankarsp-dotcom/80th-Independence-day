@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>80th Independence Day 2026 ID Card Maker</title>
+<title>80th Independence Day 2026 Photo Maker 🇮🇳</title>
 
 <meta name="description"
-content="Create your personalized 80th Independence Day 2026 ID card. Add your name and photo.">
+content="Create your personalized 80th Independence Day 2026 ID card with your name and photo. Free to use.">
 
 <meta property="og:title"
-content="🇮🇳 80th Independence Day 2026 ID Card Maker">
+content="🇮🇳 80th Independence Day 2026 Photo Maker">
 
 <meta property="og:description"
-content="Add your photo and name and create your patriotic Independence Day card.">
+content="Add your photo and name and create your personalized Independence Day card.">
 
 <style>
 
@@ -157,16 +157,48 @@ text-align:center;
 text-decoration:none;
 background:linear-gradient(135deg,#138808,#0b6b06);
 color:white;
+box-shadow:0 6px 15px rgba(19,136,8,.18);
 }
 
 .donate:hover{
-opacity:.9;
+opacity:.92;
+transform:translateY(-1px);
+}
+
+.support{
+margin-top:18px;
+padding:16px;
+border-radius:15px;
+background:linear-gradient(135deg,#fff8ed,#f4fff3);
+border:1px solid #e5eadf;
+text-align:center;
+}
+
+.support-title{
+font-size:18px;
+font-weight:bold;
+color:#172033;
+margin-bottom:8px;
+}
+
+.support p{
+font-size:13px;
+line-height:1.55;
+color:#596579;
+margin:6px 0;
+}
+
+.upi-note{
+font-size:11px;
+color:#7b8492;
+margin-top:8px;
 }
 
 .hint{
 font-size:12px;
 color:#687386;
 line-height:1.5;
+margin-top:16px;
 }
 
 .preview{
@@ -192,10 +224,30 @@ color:#687386;
 margin-top:8px;
 }
 
+.footer{
+text-align:center;
+margin-top:25px;
+color:#687386;
+font-size:12px;
+line-height:1.6;
+}
+
+.footer strong{
+color:#000080;
+}
+
 @media(max-width:780px){
 
 .app{
 grid-template-columns:1fr;
+}
+
+.panel{
+order:1;
+}
+
+.preview{
+order:2;
 }
 
 }
@@ -214,16 +266,18 @@ grid-template-columns:1fr;
 </div>
 
 <h1>
-Independence Day ID Card Maker
+Independence Day Photo Maker
 </h1>
 
 <p>
-Create your own patriotic card in seconds.
+Create your own patriotic card in seconds. 🇮🇳
 </p>
 
 </header>
 
+
 <div class="app">
+
 
 <section class="panel">
 
@@ -231,19 +285,21 @@ Create your own patriotic card in seconds.
 Personalize Your Card
 </h2>
 
+
 <label>
-Name
+Name / नाम
 </label>
 
 <input
 id="name"
 type="text"
 maxlength="30"
-placeholder="Enter your name"
+placeholder="Enter your name / अपना नाम लिखें"
 >
 
+
 <label>
-Photo
+Photo / फोटो
 </label>
 
 <label
@@ -252,7 +308,7 @@ for="photo"
 >
 
 <strong>
-📷 Choose Your Photo
+📷 Choose Your Photo / फोटो चुनें
 </strong>
 
 <small>
@@ -267,13 +323,14 @@ type="file"
 accept="image/*"
 >
 
+
 <div class="actions">
 
 <button
 class="download"
 id="download"
 >
-⬇ Download ID Card
+⬇ Download My Card
 </button>
 
 <button
@@ -287,17 +344,47 @@ id="reset"
 class="donate"
 href="upi://pay?pa=shankarsp25-3@okaxis&pn=Shankar&cu=INR"
 >
-❤️ Support Us via UPI
+❤️ Support My Effort • मेरी मेहनत को Support करें
 </a>
 
 </div>
 
+
+<div class="support">
+
+<div class="support-title">
+🇮🇳 एक छोटी सी कोशिश • A Small Effort ❤️
+</div>
+
+<p>
+मैंने इस app को अपने समय, मेहनत और creativity से बनाया है।
+अगर आपको यह पसंद आया, तो अपनी इच्छा के अनुसार छोटा सा contribution देकर मेरे प्रयास को support कर सकते हैं।
+🙏
+</p>
+
+<p>
+I created this app with my own time, effort and creativity.
+If you enjoyed using it, you can support my work with a small voluntary contribution.
+Every bit of encouragement means a lot. ❤️
+</p>
+
+<div class="upi-note">
+UPI Support is completely voluntary • कोई payment जरूरी नहीं है
+</div>
+
+</div>
+
+
 <p class="hint">
-Your photo is processed only in your browser.
-It is not uploaded by this app.
+🔒 आपकी photo केवल आपके browser में process होती है।
+यह app आपकी photo को किसी server पर upload नहीं करता।
+<br><br>
+🔒 Your photo is processed only in your browser.
+It is not uploaded to any server by this app.
 </p>
 
 </section>
+
 
 <section class="preview">
 
@@ -312,14 +399,26 @@ height="700"
 </div>
 
 <div class="note">
-1200 × 700 px • Ready for Facebook, WhatsApp and Instagram
+1200 × 700 px • Ready for Facebook, WhatsApp & Instagram
 </div>
 
 </section>
 
 </div>
 
+
+<div class="footer">
+
+🇮🇳 <strong>Happy 80th Independence Day 2026</strong> 🇮🇳
+<br>
+Made with ❤️ and मेहनत
+<br>
+<strong>Jai Hind • जय हिंद • वंदे मातरम्</strong>
+
 </div>
+
+</div>
+
 
 <script>
 
@@ -386,8 +485,6 @@ roundedRect(x,y,w,h,12);
 ctx.clip();
 
 
-/* Saffron */
-
 ctx.fillStyle="#FF9933";
 
 ctx.fillRect(
@@ -398,8 +495,6 @@ h/3
 );
 
 
-/* White */
-
 ctx.fillStyle="#FFFFFF";
 
 ctx.fillRect(
@@ -409,8 +504,6 @@ w,
 h/3
 );
 
-
-/* Green */
 
 ctx.fillStyle="#138808";
 
@@ -484,14 +577,15 @@ const W=1200;
 const H=700;
 
 
-/* Background */
-
 ctx.clearRect(
 0,
 0,
 W,
 H
 );
+
+
+/* Background */
 
 const bg=
 ctx.createLinearGradient(
@@ -526,7 +620,7 @@ H
 );
 
 
-/* Top and bottom tricolor */
+/* Tricolor borders */
 
 ctx.fillStyle="#FF9933";
 
@@ -895,3 +989,4 @@ drawCard();
 
 </body>
 </html>
+
