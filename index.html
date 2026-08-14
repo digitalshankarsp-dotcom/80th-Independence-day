@@ -1,660 +1,685 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff9933">
 
-<meta name="description" content="Create your personalized 80th Independence Day 2026 ID card.">
-<meta property="og:title" content="80th Independence Day 2026 ID Card Maker">
-<meta property="og:description" content="Add your photo and name and download your patriotic card.">
-
-<title>80th Independence Day 2026 ID Card Maker</title>
+<title>Independence Day Card Maker 🇮🇳</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#fff8f0,#f5fbf5);
-color:#172033;
+* {
+    box-sizing: border-box;
 }
 
-.wrap{
-max-width:1080px;
-margin:auto;
-padding:22px 14px 40px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+    min-height: 100vh;
+    color: #222;
 }
 
-header{
-text-align:center;
-margin-bottom:18px;
+.container {
+    width: 95%;
+    max-width: 650px;
+    margin: auto;
+    padding: 15px;
 }
 
-.badge{
-display:inline-block;
-background:#fff;
-border:1px solid #e3e8ef;
-border-radius:50px;
-padding:7px 12px;
-font-size:12px;
-font-weight:800;
-color:#000080;
+.header {
+    text-align: center;
+    padding: 15px;
 }
 
-h1{
-font-size:clamp(26px,5vw,42px);
-margin:11px 0 6px;
+.header h1 {
+    margin: 5px 0;
+    font-size: 30px;
+    color: #063970;
 }
 
-header p{
-color:#687386;
+.header p {
+    margin: 5px;
+    font-size: 16px;
 }
 
-.app{
-display:grid;
-grid-template-columns:310px 1fr;
-gap:18px;
+.card-box {
+    background: rgba(255,255,255,0.96);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.panel,.preview{
-background:#fff;
-border:1px solid #e1e7ef;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(20,35,60,.08);
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 5px;
 }
 
-.panel{
-padding:19px;
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
-.panel h2{
-font-size:18px;
-margin:0 0 14px;
+button {
+    border: none;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
 }
 
-label{
-display:block;
-font-size:13px;
-font-weight:800;
-margin:14px 0 7px;
+.primary {
+    background: #ff9933;
+    color: white;
 }
 
-input[type=text]{
-width:100%;
-padding:13px;
-border:1px solid #d5dce6;
-border-radius:11px;
-font-size:16px;
+.green {
+    background: #138808;
+    color: white;
 }
 
-.upload{
-padding:15px;
-border:2px dashed #ccd5e1;
-border-radius:14px;
-text-align:center;
-cursor:pointer;
-background:#fafbfd;
+.blue {
+    background: #063970;
+    color: white;
 }
 
-.upload strong{
-display:block;
+.download {
+    background: #222;
+    color: white;
 }
 
-.upload small{
-color:#687386;
+/* CARD */
+
+#independenceCard {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #ff9933 0%,
+        #ff9933 33%,
+        white 33%,
+        white 66%,
+        #138808 66%,
+        #138808 100%
+    );
+    border-radius: 18px;
+    padding: 25px 15px;
+    text-align: center;
+    min-height: 500px;
+    display: none;
 }
 
-input[type=file]{
-display:none;
+#independenceCard h2 {
+    color: #063970;
+    font-size: 28px;
+    margin: 8px;
 }
 
-.actions{
-display:grid;
-gap:9px;
-margin-top:17px;
+#independenceCard h3 {
+    font-size: 22px;
+    margin: 10px;
 }
 
-button{
-border:0;
-border-radius:11px;
-padding:13px;
-font-size:15px;
-font-weight:800;
-cursor:pointer;
+.photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin: 15px auto;
+    display: block;
 }
 
-.primary{
-background:linear-gradient(135deg,#ff9933,#f47a22);
-color:#fff;
+.message {
+    background: rgba(255,255,255,0.92);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px auto;
+    max-width: 500px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.secondary{
-background:#edf1f6;
-color:#172033;
+.chakra {
+    font-size: 60px;
+    color: #063970;
 }
 
-.hint{
-font-size:12px;
-color:#687386;
-line-height:1.5;
+/* PAYMENT */
+
+.payment-title {
+    text-align: center;
+    color: #063970;
 }
 
-.preview{
-padding:12px;
+.amount-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
 }
 
-.canvasbox{
-border-radius:13px;
-overflow:hidden;
-background:#eee;
+.amount-buttons button {
+    background: #138808;
+    color: white;
+    min-width: 70px;
 }
 
-canvas{
-display:block;
-width:100%;
-height:auto;
+.custom-amount {
+    text-align: center;
 }
 
-.note{
-text-align:center;
-font-size:12px;
-color:#687386;
-margin-top:8px;
+.qr-area {
+    text-align: center;
+    margin-top: 15px;
 }
 
-/* SUPPORT SECTION */
-
-.support{
-margin:22px auto 0;
-max-width:900px;
-background:#fff;
-border:1px solid #e4e8ef;
-border-radius:20px;
-padding:22px;
-text-align:center;
-box-shadow:0 12px 35px rgba(21,36,60,.07);
+.qr-area img {
+    width: 260px;
+    max-width: 90%;
+    border: 8px solid white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-.support h2{
-margin:0 0 8px;
-font-size:22px;
+.upi-id {
+    background: #f3f3f3;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+    word-break: break-all;
 }
 
-.support p{
-margin:6px 0;
-color:#687386;
-line-height:1.5;
+.note {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    line-height: 1.5;
 }
 
-.upi-id{
-font-weight:800;
-color:#172033;
-word-break:break-all;
-margin:10px 0 14px;
+.success {
+    display: none;
+    background: #e8f5e9;
+    color: #137333;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.qr{
-width:240px;
-height:240px;
-max-width:80vw;
-margin:10px auto;
-display:block;
-border-radius:10px;
-}
-
-.pay-btn{
-display:inline-block;
-text-decoration:none;
-background:linear-gradient(135deg,#ff9933,#f47721);
-color:#fff;
-padding:13px 20px;
-border-radius:12px;
-font-weight:800;
-margin-top:10px;
-}
-
-.qr-note{
-font-size:12px!important;
-}
-
-@media(max-width:780px){
-.app{
-grid-template-columns:1fr;
-}
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    color: #333;
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<div class="container">
 
-<header>
+    <div class="header">
+        <h1>🇮🇳 Independence Day 🇮🇳</h1>
+        <p>Create your personalised Independence Day card</p>
+        <p><b>15 August</b></p>
+    </div>
 
-<div class="badge">
-🇮🇳 15 AUGUST 2026 • 80TH INDEPENDENCE DAY
+    <!-- CARD MAKER -->
+
+    <div class="card-box">
+
+        <h2>Create Your Card</h2>
+
+        <label>Your Name</label>
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter your name"
+        >
+
+        <label>Upload Your Photo</label>
+        <input
+            type="file"
+            id="photoInput"
+            accept="image/*"
+        >
+
+        <br><br>
+
+        <button class="primary" onclick="createCard()">
+            🇮🇳 Create Card
+        </button>
+
+    </div>
+
+
+    <!-- GENERATED CARD -->
+
+    <div id="independenceCard">
+
+        <div class="chakra">☸</div>
+
+        <h2>HAPPY INDEPENDENCE DAY</h2>
+
+        <img
+            id="userPhoto"
+            class="photo"
+            alt="Your Photo"
+        >
+
+        <h3 id="userName"></h3>
+
+        <div class="message">
+            🇮🇳 Proud to be an Indian 🇮🇳
+            <br><br>
+            Let us celebrate the spirit of freedom,
+            unity and our beautiful nation.
+        </div>
+
+        <h3>जय हिन्द! 🇮🇳</h3>
+
+    </div>
+
+
+    <!-- CARD ACTIONS -->
+
+    <div
+        class="card-box"
+        id="cardActions"
+        style="display:none;text-align:center;"
+    >
+
+        <button
+            class="download"
+            onclick="downloadCard()"
+        >
+            📥 Download Card
+        </button>
+
+        <button
+            class="green"
+            onclick="shareWhatsApp()"
+        >
+            💬 Share on WhatsApp
+        </button>
+
+    </div>
+
+
+    <!-- SUPPORT / PAYMENT -->
+
+    <div class="card-box">
+
+        <h2 class="payment-title">
+            ❤️ Support This App
+        </h2>
+
+        <p style="text-align:center;">
+            If you enjoyed this Independence Day card maker,
+            you can support the creator.
+        </p>
+
+        <div class="amount-buttons">
+
+            <button onclick="setAmount(1)">
+                ₹1
+            </button>
+
+            <button onclick="setAmount(5)">
+                ₹5
+            </button>
+
+            <button onclick="setAmount(10)">
+                ₹10
+            </button>
+
+            <button onclick="setAmount(20)">
+                ₹20
+            </button>
+
+        </div>
+
+        <div class="custom-amount">
+
+            <label>Custom Amount</label>
+
+            <input
+                type="number"
+                id="amount"
+                min="1"
+                placeholder="Enter amount"
+            >
+
+            <button
+                class="blue"
+                onclick="payViaUPI()"
+            >
+                💳 Pay via UPI App
+            </button>
+
+        </div>
+
+
+        <div class="qr-area">
+
+            <h3>📱 Scan & Pay</h3>
+
+            <p>
+                Scan this QR using
+                <b>Google Pay, PhonePe, Paytm or any UPI app</b>.
+            </p>
+
+            <!-- YOUR BOI QR CODE -->
+
+            <img
+                id="qrImage"
+                src="boi-qr.png"
+                alt="BOI UPI QR Code"
+            >
+
+            <div class="upi-id">
+                UPI ID:
+                <span id="displayUpi">
+                    YOUR-UPI-ID@bank
+                </span>
+            </div>
+
+            <button
+                class="green"
+                onclick="copyUPI()"
+            >
+                📋 Copy UPI ID
+            </button>
+
+            <div
+                class="success"
+                id="copyMessage"
+            >
+                UPI ID copied successfully!
+            </div>
+
+        </div>
+
+
+        <p class="note">
+
+            ✅ Your payment goes directly to the UPI ID shown above.
+
+            <br>
+
+            🔒 Never enter your UPI PIN on this website.
+
+            <br>
+
+            The QR code opens the payment inside your UPI app.
+
+        </p>
+
+    </div>
+
+
+    <footer>
+        🇮🇳 Made with ❤️ for India 🇮🇳
+        <br>
+        Happy Independence Day
+    </footer>
+
 </div>
-
-<h1>Independence Day ID Card Maker</h1>
-
-<p>Create your own patriotic card in seconds.</p>
-
-</header>
-
-
-<div class="app">
-
-<section class="panel">
-
-<h2>Personalize your card</h2>
-
-<label>Name</label>
-
-<input
-id="name"
-type="text"
-maxlength="30"
-placeholder="Enter your name"
->
-
-<label>Photo</label>
-
-<label class="upload" for="photo">
-
-<strong>📷 Choose your photo</strong>
-
-<small>JPG, PNG or WebP</small>
-
-</label>
-
-<input
-id="photo"
-type="file"
-accept="image/*"
->
-
-<div class="actions">
-
-<button class="primary" id="download">
-⬇ Download ID Card
-</button>
-
-<button class="secondary" id="reset">
-↻ Reset
-</button>
-
-</div>
-
-<p class="hint">
-Your photo is processed only in your browser.
-It is not uploaded by this app.
-</p>
-
-</section>
-
-
-<section class="preview">
-
-<div class="canvasbox">
-
-<canvas
-id="card"
-width="1200"
-height="700">
-</canvas>
-
-</div>
-
-<div class="note">
-1200 × 700 px • Ready for Facebook, WhatsApp and Instagram
-</div>
-
-</section>
-
-</div>
-</div>
-
-
-<!-- SUPPORT SECTION -->
-
-<section class="support">
-
-<h2>❤️ Support My Effort</h2>
-
-<p>
-If you enjoy this app and would like to support my work,
-you can make a voluntary contribution.
-</p>
-
-<p class="upi-id">
-UPI ID: shankarsp25-3@okaxis
-</p>
-
-
-<!-- UPI QR CODE -->
-
-<img
-class="qr"
-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYgAAAGIAQAAAABzOEqLAAAC9UlEQVR4nO1by27DMAwjh/7/L3MHvZweBvQQT1W8Al3WhpgVQaJFyRQ+/Pn5FHAQB3EQB3EQAxEvAKBdCyBEUYT/ln2tuqOpHVMQLwD2nEF3DEX7wPwDc4/f0dWOKQjzB5jRUU+eMDdYcIRPmtoxBfG6/snwiecqu9y+qucirv6w5CTCXpCWmNm4quci3B/XEBAEUE4l1OWOnnZMQUBSPGr98aqbe9oxBXEhB9tZBbfH/uofVvVchNUftoWSM7i5RYxdluL7bat6OoIQLDIgiw2KoCDZfleI71vb8f2IyldZkweZwwtA2a43iL2nHaMQJOihIMoLQoL08BBOvtqESL2EiELDWT3IxF0h8vjjfoT5w3KVswQAUOkcrMrWplU9F1EKbqqG9rHV5bSafdEUm9oxBcHMUBEJKDHXmNypPJi/px2jEAoGcakE9Gig7JJCMElnOwYgPF8p6NxDJTse2YmiB0tTO0YhrPSjTGaXNz5ce4cJXILvhBvbMQARfI4qMqJNm6xem65dq3o4gqqanBAEEnQS8fqQ0WVvbMcABCTJdSp//CGwL22PeD96+92I3OVqKdCrHeXJixk+Xe0YhlB0ykuoYhYjjPp896oeiLjW5151IKXeGjg5/dq9+WrJVjHXAEUPPS83rerhCGNwSjlzRQESAVJWgCTDN7ZjACL0dqu/XcVS5qgaj0sNvqcdoxAMGdeeuCtVxeIUqGiANLZjFsLrPmdxC5bSE2OCtL8dX41Y56kVKm9MtmfzVqzRn552TEOQPpUYMiJJy2AxfHLmS/bFB7IVWJK7Tf3kVZ4B6WnHFMTbfGJ2QuDveSznzPvsi4/oOXnvVtmlzYMgrFGHnnbMQpjIayTCxQ2u9l46up3t+H7E5XwURInMceqoSci6pakdMxGsdlRWiRC9Q3Ly1f2It/Nqfl4wj9b6aHVwyq5VPR6RMwusipAg1oIQZ97nfsSit9d4e426h8K4bIt72jEF8XZ49pb/cRAHcRAHcRDzEL/huqXrUvli9gAAAABJRU5ErkJggg=="
-alt="UPI QR code for Shankar Sudhakar Pingulkar"
->
-
-
-<p class="qr-note">
-📱 Scan this QR code with Google Pay,
-PhonePe, Paytm or any UPI app.
-</p>
-
-
-<!-- UPI PAYMENT BUTTON -->
-
-<a
-class="pay-btn"
-href="upi://pay?pa=shankarsp25-3%40okaxis&pn=Shankar%20Sudhakar%20Pingulkar%20(Sachin)&cu=INR"
->
-💳 Support via UPI
-</a>
-
-</section>
 
 
 <script>
 
-const c=document.getElementById("card"),
-x=c.getContext("2d"),
-n=document.getElementById("name"),
-f=document.getElementById("photo");
+/*
+==================================================
+IMPORTANT SETTINGS
+==================================================
+*/
 
-let img=null;
+const UPI_ID = "YOUR-UPI-ID@bank";
+
+const QR_IMAGE = "boi-qr.png";
 
 
-function rr(a,b,w,h,r){
+/*
+==================================================
+INITIAL SETUP
+==================================================
+*/
 
-x.beginPath();
+document.getElementById("displayUpi").textContent = UPI_ID;
 
-x.moveTo(a+r,b);
+document.getElementById("qrImage").src = QR_IMAGE;
 
-x.arcTo(a+w,b,a+w,b+h,r);
 
-x.arcTo(a+w,b+h,a,b+h,r);
+/*
+==================================================
+CREATE CARD
+==================================================
+*/
 
-x.arcTo(a,b+h,a,b,r);
+function createCard() {
 
-x.arcTo(a,b,a+w,b,r);
+    const name =
+        document.getElementById("nameInput").value.trim();
 
-x.closePath();
+    const photoInput =
+        document.getElementById("photoInput");
 
+    if (!name) {
+
+        alert("Please enter your name.");
+
+        return;
+    }
+
+    if (!photoInput.files.length) {
+
+        alert("Please upload your photo.");
+
+        return;
+    }
+
+    document.getElementById("userName").textContent = name;
+
+    const file = photoInput.files[0];
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        document.getElementById("userPhoto").src =
+            e.target.result;
+
+        document.getElementById("independenceCard").style.display =
+            "block";
+
+        document.getElementById("cardActions").style.display =
+            "block";
+
+        document.getElementById("independenceCard")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    };
+
+    reader.readAsDataURL(file);
 }
 
 
-function flag(a,b,w,h){
+/*
+==================================================
+DOWNLOAD CARD
+==================================================
+*/
 
-x.save();
+async function downloadCard() {
 
-rr(a,b,w,h,12);
+    const card =
+        document.getElementById("independenceCard");
 
-x.clip();
+    /*
+    Try browser screenshot method.
+    */
 
-x.fillStyle="#FF9933";
-x.fillRect(a,b,w,h/3);
+    if (typeof html2canvas === "undefined") {
 
-x.fillStyle="#fff";
-x.fillRect(a,b+h/3,w,h/3);
+        alert(
+            "Please wait for the card tools to load and try again."
+        );
 
-x.fillStyle="#138808";
-x.fillRect(a,b+2*h/3,w,h/3);
+        return;
+    }
 
-let cx=a+w/2,
-cy=b+h/2,
-r=Math.min(w,h)*.18;
+    const canvas =
+        await html2canvas(card, {
+            scale: 2,
+            useCORS: true
+        });
 
-x.strokeStyle="#000080";
-x.lineWidth=5;
+    const link =
+        document.createElement("a");
 
-x.beginPath();
-x.arc(cx,cy,r,0,7);
-x.stroke();
+    link.download =
+        "Independence-Day-Card.png";
 
-x.lineWidth=2;
+    link.href =
+        canvas.toDataURL("image/png");
 
-for(let i=0;i<24;i++){
-
-let q=i*Math.PI*2/24;
-
-x.beginPath();
-
-x.moveTo(cx,cy);
-
-x.lineTo(
-cx+Math.cos(q)*r,
-cy+Math.sin(q)*r
-);
-
-x.stroke();
-
-}
-
-x.restore();
-
+    link.click();
 }
 
 
-function draw(){
+/*
+==================================================
+WHATSAPP SHARE
+==================================================
+*/
 
-let W=1200,
-H=700;
+function shareWhatsApp() {
 
-x.clearRect(0,0,W,H);
+    const name =
+        document.getElementById("nameInput").value.trim();
 
+    const message =
+        "🇮🇳 Happy Independence Day 🇮🇳\n\n" +
+        name +
+        " wishes you a very Happy Independence Day!\n\n" +
+        "जय हिन्द! 🇮🇳";
 
-let g=x.createLinearGradient(0,0,W,H);
+    const url =
+        "https://wa.me/?text=" +
+        encodeURIComponent(message);
 
-g.addColorStop(0,"#fff9f3");
-g.addColorStop(.5,"#fff");
-g.addColorStop(1,"#f2faf2");
-
-x.fillStyle=g;
-x.fillRect(0,0,W,H);
-
-
-x.fillStyle="#FF9933";
-x.fillRect(0,0,W,14);
-
-x.fillStyle="#138808";
-x.fillRect(0,H-14,W,14);
-
-
-x.fillStyle="#172033";
-x.font="bold 42px Arial";
-
-x.fillText(
-"80TH INDEPENDENCE DAY",
-60,
-78
-);
-
-
-x.fillStyle="#000080";
-x.font="bold 22px Arial";
-
-x.fillText(
-"15 AUGUST 2026",
-60,
-112
-);
-
-
-flag(60,150,410,235);
-
-
-x.fillStyle="#172033";
-x.font="bold 30px Arial";
-
-x.fillText(
-"PROUD TO BE AN INDIAN",
-60,
-430
-);
-
-
-x.fillStyle="#687386";
-x.font="19px Arial";
-
-x.fillText(
-"Celebrating the spirit, unity and pride of India",
-60,
-463
-);
-
-
-let px=790,
-py=140,
-pw=320,
-ph=275;
-
-
-x.save();
-
-rr(px,py,pw,ph,25);
-
-x.clip();
-
-
-if(img){
-
-let s=Math.max(
-pw/img.width,
-ph/img.height
-);
-
-let sw=img.width*s,
-sh=img.height*s;
-
-x.drawImage(
-img,
-px+(pw-sw)/2,
-py+(ph-sh)/2,
-sw,
-sh
-);
-
-}else{
-
-x.fillStyle="#e5eaf0";
-
-x.fillRect(
-px,
-py,
-pw,
-ph
-);
-
-x.fillStyle="#7d8998";
-x.font="bold 25px Arial";
-x.textAlign="center";
-
-x.fillText(
-"YOUR PHOTO",
-px+pw/2,
-py+ph/2
-);
-
-x.textAlign="left";
-
-}
-
-x.restore();
-
-
-x.fillStyle="#000080";
-x.font="bold 34px Arial";
-x.textAlign="center";
-
-x.fillText(
-(n.value.trim()||"YOUR NAME").toUpperCase(),
-px+pw/2,
-465
-);
-
-
-x.fillStyle="#172033";
-x.font="bold 31px Arial";
-
-x.fillText(
-"Happy 80th Independence Day!",
-W/2,
-570
-);
-
-
-x.fillStyle="#138808";
-x.font="bold 30px Arial";
-
-x.fillText(
-"I Love My India.",
-W/2,
-618
-);
-
-x.textAlign="left";
-
+    window.open(url, "_blank");
 }
 
 
-n.oninput=draw;
+/*
+==================================================
+AMOUNT
+==================================================
+*/
+
+function setAmount(value) {
+
+    document.getElementById("amount").value =
+        value;
+}
 
 
-f.onchange=e=>{
+/*
+==================================================
+UPI PAYMENT
+==================================================
+*/
 
-let r=new FileReader;
+function payViaUPI() {
 
-r.onload=v=>{
+    const amount =
+        document.getElementById("amount").value;
 
-let z=new Image;
+    if (!amount || Number(amount) < 1) {
 
-z.onload=()=>{
+        alert(
+            "Please enter an amount of ₹1 or more."
+        );
 
-img=z;
-draw();
+        return;
+    }
 
-};
+    /*
+    UPI payment intent.
 
-z.src=v.target.result;
+    QR remains the primary/fallback method.
+    */
 
-};
+    const upiUrl =
+        "upi://pay" +
+        "?pa=" +
+        encodeURIComponent(UPI_ID) +
+        "&pn=" +
+        encodeURIComponent("Independence Day App") +
+        "&am=" +
+        encodeURIComponent(amount) +
+        "&cu=INR";
 
-r.readAsDataURL(e.target.files[0]);
-
-};
-
-
-document.getElementById("reset").onclick=()=>{
-
-n.value="";
-f.value="";
-img=null;
-
-draw();
-
-};
-
-
-document.getElementById("download").onclick=()=>{
-
-let a=document.createElement("a");
-
-a.download="80th-Independence-Day-2026.png";
-
-a.href=c.toDataURL("image/png");
-
-a.click();
-
-};
+    window.location.href = upiUrl;
+}
 
 
-draw();
+/*
+==================================================
+COPY UPI ID
+==================================================
+*/
 
+function copyUPI() {
+
+    navigator.clipboard.writeText(UPI_ID)
+        .then(function() {
+
+            const message =
+                document.getElementById("copyMessage");
+
+            message.style.display = "block";
+
+            setTimeout(function() {
+
+                message.style.display = "none";
+
+            }, 2500);
+
+        })
+        .catch(function() {
+
+            alert(
+                "UPI ID: " + UPI_ID
+            );
+
+        });
+}
+
+</script>
+
+
+<!-- html2canvas for card download -->
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
 </script>
 
 </body>
