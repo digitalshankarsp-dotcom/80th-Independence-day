@@ -2,487 +2,279 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color"
-content="#ff9933">
-
-<title>
-🇮🇳 Independence Day Card Maker
-</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff9933">
+<title>🇮🇳 Independence Day Card Maker</title>
 
 <style>
+*{box-sizing:border-box}
 
-/* ================================
-   BASIC
-================================ */
-
-* {
-    box-sizing: border-box;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ff9933,#fff,#138808);
+  min-height:100vh;
+  color:#222
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff9933,
-        #ffffff,
-        #138808
-    );
-
-    min-height: 100vh;
-    color: #222;
+.container{
+  width:94%;
+  max-width:650px;
+  margin:auto;
+  padding:15px
 }
 
-.container {
-    width: 94%;
-    max-width: 650px;
-    margin: auto;
-    padding: 15px;
+.header{
+  text-align:center;
+  padding:15px 5px
 }
 
-.header {
-    text-align: center;
-    padding: 15px 5px;
+.header h1{
+  color:#063970;
+  font-size:30px;
+  margin:5px 0
 }
 
-.header h1 {
-    color: #063970;
-    font-size: 30px;
-    margin: 5px 0;
+.box{
+  background:rgba(255,255,255,.97);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 7px 25px rgba(0,0,0,.15)
 }
 
-.header p {
-    margin: 6px 0;
+h2{
+  text-align:center;
+  color:#063970
 }
 
-.box {
-    background: rgba(255,255,255,0.97);
-    border-radius: 20px;
-
-    padding: 20px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-    0 7px 25px rgba(0,0,0,0.15);
+label{
+  display:block;
+  font-weight:bold;
+  margin:12px 0 6px
 }
 
-h2 {
-    text-align: center;
-    color: #063970;
+input{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:16px
 }
 
-label {
-    display: block;
-
-    font-weight: bold;
-
-    margin:
-    12px 0 6px;
+button{
+  border:0;
+  border-radius:10px;
+  padding:13px 18px;
+  margin:5px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer
 }
 
-input {
-    width: 100%;
-
-    padding: 13px;
-
-    border:
-    1px solid #ccc;
-
-    border-radius: 10px;
-
-    font-size: 16px;
+.orange{
+  background:#ff9933;
+  color:white
 }
 
-button {
-    border: none;
-
-    border-radius: 10px;
-
-    padding: 13px 18px;
-
-    margin: 5px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
+.green{
+  background:#138808;
+  color:white
 }
 
-button:active {
-    transform: scale(0.97);
+.blue{
+  background:#063970;
+  color:white
 }
 
-.orange {
-    background: #ff9933;
-    color: white;
+.black{
+  background:#222;
+  color:white
 }
 
-.green {
-    background: #138808;
-    color: white;
+/* CARD */
+
+#card{
+  display:none;
+  text-align:center;
+  border-radius:20px;
+  overflow:hidden;
+
+  background:linear-gradient(
+    to bottom,
+    #ff9933 0%,
+    #ff9933 33%,
+    #fff 33%,
+    #fff 66%,
+    #138808 66%,
+    #138808 100%
+  );
+
+  padding:25px 15px;
+  min-height:520px
 }
 
-.blue {
-    background: #063970;
-    color: white;
+.chakra{
+  font-size:65px;
+  color:#063970
 }
 
-.black {
-    background: #222;
-    color: white;
+#card h2{
+  font-size:27px;
+  margin:5px
 }
 
-
-/* ================================
-   CARD
-================================ */
-
-#card {
-
-    display: none;
-
-    text-align: center;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    background:
-    linear-gradient(
-        to bottom,
-
-        #ff9933 0%,
-        #ff9933 33%,
-
-        #ffffff 33%,
-        #ffffff 66%,
-
-        #138808 66%,
-        #138808 100%
-    );
-
-    padding: 25px 15px;
-
-    min-height: 520px;
+#card h3{
+  font-size:23px
 }
 
-.chakra {
-
-    font-size: 65px;
-
-    color: #063970;
-
+#userPhoto{
+  width:155px;
+  height:155px;
+  object-fit:cover;
+  border-radius:50%;
+  border:6px solid white;
+  box-shadow:0 4px 15px rgba(0,0,0,.3);
+  margin:12px auto;
+  display:block
 }
 
-#card h2 {
-
-    font-size: 27px;
-
-    margin: 5px;
-
+.message{
+  background:rgba(255,255,255,.93);
+  border-radius:15px;
+  padding:15px;
+  margin:15px auto;
+  max-width:500px;
+  font-size:18px;
+  font-weight:bold
 }
 
-#card h3 {
+/* AMOUNTS */
 
-    font-size: 23px;
-
+.amount-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:12px 0
 }
 
-#userPhoto {
-
-    width: 155px;
-
-    height: 155px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border:
-    6px solid white;
-
-    box-shadow:
-    0 4px 15px rgba(0,0,0,0.3);
-
-    margin: 12px auto;
-
-    display: block;
+.amount-buttons button{
+  background:#138808;
+  color:white;
+  min-width:70px
 }
 
-.message {
-
-    background:
-    rgba(255,255,255,0.93);
-
-    border-radius: 15px;
-
-    padding: 15px;
-
-    margin: 15px auto;
-
-    max-width: 500px;
-
-    font-size: 18px;
-
-    font-weight: bold;
+.amount-buttons button.selected{
+  background:#ff9933;
+  outline:3px solid #063970
 }
 
-
-/* ================================
-   CARD BUTTONS
-================================ */
-
-.card-buttons {
-
-    text-align: center;
-
+.amount-display{
+  background:#fff7e6;
+  border:2px solid #ff9933;
+  border-radius:12px;
+  padding:12px;
+  margin:15px 0;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center
 }
 
+/* QR */
 
-/* ================================
-   PAYMENT AMOUNTS
-================================ */
-
-.amount-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    margin: 12px 0;
+.qr-title{
+  text-align:center;
+  color:#063970;
+  font-size:22px;
+  font-weight:bold;
+  margin-top:20px
 }
 
-.amount-buttons button {
-
-    background: #138808;
-
-    color: white;
-
-    min-width: 70px;
-
+.qr-wrap{
+  width:310px;
+  max-width:94%;
+  margin:15px auto;
+  background:white;
+  padding:15px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,.25)
 }
 
-.amount-buttons button.selected {
-
-    background: #ff9933;
-
-    outline:
-    3px solid #063970;
+.qr-svg{
+  display:block;
+  width:100%;
+  height:auto;
+  image-rendering:pixelated
 }
 
-.custom-area {
-
-    margin-top: 15px;
-
+.upi{
+  background:#f3f3f3;
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+  word-break:break-all;
+  font-weight:bold
 }
 
-.custom-button {
+/* INSTRUCTIONS */
 
-    width: 100%;
-
-    margin:
-    10px 0;
+.instructions{
+  background:#f5f5f5;
+  border-radius:12px;
+  padding:15px;
+  text-align:left;
+  line-height:1.7
 }
 
-.amount-display {
-
-    background: #fff7e6;
-
-    border:
-    2px solid #ff9933;
-
-    border-radius: 12px;
-
-    padding: 12px;
-
-    margin: 15px 0;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    text-align: center;
+.warning{
+  background:#fff3cd;
+  border-radius:10px;
+  padding:12px;
+  font-size:14px;
+  margin-top:15px
 }
 
-
-/* ================================
-   QR
-================================ */
-
-.qr-title {
-
-    text-align: center;
-
-    color: #063970;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-top: 20px;
+.success{
+  display:none;
+  background:#e8f5e9;
+  color:#137333;
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
+  font-weight:bold;
+  text-align:center
 }
 
-.qr-image {
-
-    display: block;
-
-    width: 280px;
-
-    max-width: 90%;
-
-    margin: 15px auto;
-
-    border:
-    8px solid white;
-
-    border-radius: 15px;
-
-    box-shadow:
-    0 5px 20px rgba(0,0,0,0.25);
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:13px
 }
 
-.qr-error {
+@media(max-width:480px){
 
-    display: none;
+  .header h1{
+    font-size:25px
+  }
 
-    background: #ffebee;
+  #userPhoto{
+    width:135px;
+    height:135px
+  }
 
-    color: #c62828;
-
-    padding: 12px;
-
-    border-radius: 10px;
-
-    text-align: center;
-
-    margin-top: 10px;
-}
-
-
-/* ================================
-   INSTRUCTIONS
-================================ */
-
-.instructions {
-
-    background: #f5f5f5;
-
-    border-radius: 12px;
-
-    padding: 15px;
-
-    text-align: left;
-
-    line-height: 1.7;
+  button{
+    font-size:15px
+  }
 
 }
-
-.warning {
-
-    background: #fff3cd;
-
-    border-radius: 10px;
-
-    padding: 12px;
-
-    font-size: 14px;
-
-    margin-top: 15px;
-
-}
-
-.success {
-
-    display: none;
-
-    background: #e8f5e9;
-
-    color: #137333;
-
-    padding: 12px;
-
-    border-radius: 10px;
-
-    margin-top: 10px;
-
-    font-weight: bold;
-
-    text-align: center;
-}
-
-
-/* ================================
-   FOOTER
-================================ */
-
-footer {
-
-    text-align: center;
-
-    padding: 15px;
-
-    font-size: 13px;
-
-}
-
-
-/* ================================
-   MOBILE
-================================ */
-
-@media(max-width:480px) {
-
-    .header h1 {
-
-        font-size: 25px;
-
-    }
-
-    #card {
-
-        min-height: 480px;
-
-    }
-
-    #userPhoto {
-
-        width: 135px;
-
-        height: 135px;
-
-    }
-
-    button {
-
-        font-size: 15px;
-
-    }
-
-}
-
 </style>
 </head>
 
-
 <body>
-
 
 <div class="container">
 
-
-<!-- =================================
-     HEADER
-================================= -->
+<!-- HEADER -->
 
 <div class="header">
 
@@ -501,10 +293,7 @@ Create your personalised Independence Day card
 </div>
 
 
-
-<!-- =================================
-     CARD CREATOR
-================================= -->
+<!-- CARD CREATOR -->
 
 <div class="box">
 
@@ -512,30 +301,27 @@ Create your personalised Independence Day card
 🇮🇳 Create Your Card
 </h2>
 
-
 <label>
 Your Name
 </label>
 
 <input
-type="text"
 id="name"
+type="text"
 placeholder="Enter your name"
 >
-
 
 <label>
 Upload Your Photo
 </label>
 
 <input
-type="file"
 id="photo"
+type="file"
 accept="image/*"
 >
 
-
-<div style="text-align:center;margin-top:15px;">
+<div style="text-align:center;margin-top:15px">
 
 <button
 class="orange"
@@ -549,10 +335,7 @@ onclick="createCard()"
 </div>
 
 
-
-<!-- =================================
-     GENERATED CARD
-================================= -->
+<!-- GENERATED CARD -->
 
 <div id="card">
 
@@ -564,16 +347,12 @@ onclick="createCard()"
 HAPPY INDEPENDENCE DAY
 </h2>
 
-
 <img
 id="userPhoto"
 alt="Your Photo"
 >
 
-
-<h3 id="userName">
-</h3>
-
+<h3 id="userName"></h3>
 
 <div class="message">
 
@@ -581,11 +360,10 @@ alt="Your Photo"
 
 <br><br>
 
-Let us celebrate the spirit of
-freedom, unity and our beautiful nation.
+Let us celebrate the spirit of freedom,
+unity and our beautiful nation.
 
 </div>
-
 
 <h3>
 जय हिन्द! 🇮🇳
@@ -594,24 +372,20 @@ freedom, unity and our beautiful nation.
 </div>
 
 
-
-<!-- =================================
-     CARD ACTIONS
-================================= -->
+<!-- CARD BUTTONS -->
 
 <div
-class="box card-buttons"
+class="box"
 id="cardButtons"
-style="display:none;"
+style="display:none;text-align:center"
 >
 
 <button
 class="black"
-onclick="downloadCard()"
+onclick="saveCard()"
 >
-📥 Save Card
+📸 Save Card
 </button>
-
 
 <button
 class="green"
@@ -623,10 +397,7 @@ onclick="shareWhatsApp()"
 </div>
 
 
-
-<!-- =================================
-     SUPPORT
-================================= -->
+<!-- SUPPORT -->
 
 <div class="box">
 
@@ -634,8 +405,7 @@ onclick="shareWhatsApp()"
 ❤️ Support This App
 </h2>
 
-
-<p style="text-align:center;">
+<p style="text-align:center">
 
 If you enjoyed this Independence Day
 card maker, you can support the creator.
@@ -643,20 +413,16 @@ card maker, you can support the creator.
 </p>
 
 
-
-<!-- =================================
-     QUICK AMOUNTS
-================================= -->
-
-<h3 style="text-align:center;color:#063970;">
-
+<h3
+style="text-align:center;color:#063970"
+>
 Choose Amount
-
 </h3>
 
 
-<div class="amount-buttons">
+<!-- QUICK AMOUNTS -->
 
+<div class="amount-buttons">
 
 <button
 onclick="selectAmount(1,this)"
@@ -664,13 +430,11 @@ onclick="selectAmount(1,this)"
 ₹1
 </button>
 
-
 <button
 onclick="selectAmount(5,this)"
 >
 ₹5
 </button>
-
 
 <button
 onclick="selectAmount(10,this)"
@@ -678,13 +442,11 @@ onclick="selectAmount(10,this)"
 ₹10
 </button>
 
-
 <button
 onclick="selectAmount(20,this)"
 >
 ₹20
 </button>
-
 
 <button
 onclick="selectAmount(50,this)"
@@ -692,52 +454,39 @@ onclick="selectAmount(50,this)"
 ₹50
 </button>
 
-
 <button
 onclick="selectAmount(100,this)"
 >
 ₹100
 </button>
 
-
 </div>
 
 
-
-<!-- =================================
-     CUSTOM AMOUNT
-================================= -->
-
-<div class="custom-area">
+<!-- CUSTOM AMOUNT -->
 
 <label>
-💰 Enter Any Amount
+💰 Custom Amount
 </label>
 
-
 <input
-type="number"
 id="customAmount"
+type="number"
 min="1"
 step="1"
-placeholder="Example: 37"
+placeholder="Enter any amount, e.g. 37"
 >
 
-
 <button
-class="orange custom-button"
+class="orange"
+style="width:100%;margin:10px 0"
 onclick="useCustomAmount()"
 >
 💰 Use Custom Amount
 </button>
 
-</div>
 
-
-
-<!-- =================================
-     SELECTED AMOUNT
-================================= -->
+<!-- SELECTED AMOUNT -->
 
 <div
 class="amount-display"
@@ -749,83 +498,66 @@ Selected Amount: ₹1
 </div>
 
 
-
-<!-- =================================
-     QR PAYMENT
-================================= -->
+<!-- QR -->
 
 <div class="qr-title">
 
-📱 Scan BOI QR to Pay
+📱 Scan This Working UPI QR
 
 </div>
 
+<p style="text-align:center">
 
-<p style="text-align:center;">
-
-Scan this QR using
-
-<b>
-Google Pay
-</b>,
-
-<b>
-PhonePe
-</b>,
-
-<b>
-Paytm
-</b>
-
-or another UPI app.
+Scan with
+<b>Google Pay</b>,
+<b>PhonePe</b>,
+<b>Paytm</b>
+or any UPI app.
 
 </p>
 
 
+<!-- EMBEDDED QR -->
 
-<!-- =================================
-     IMPORTANT:
-     YOUR ACTUAL WORKING BOI QR
-================================= -->
+<div class="qr-wrap">
 
-<img
-src="boi-qr.png"
-class="qr-image"
-alt="Bank of India UPI QR Code"
-onerror="showQRError()"
+<svg
+class="qr-svg"
+viewBox="0 0 49 49"
+xmlns="http://www.w3.org/2000/svg"
+aria-label="UPI QR code"
 >
 
+<rect
+width="49"
+height="49"
+fill="white"
+/>
 
-<div
-id="qrError"
-class="qr-error"
->
+<path
+d="M4 4h7v1H4zM15 4h1v1H15zM18 4h1v1H18zM20 4h1v1H20zM22 4h6v1H22zM29 4h4v1H29zM35 4h1v1H35zM38 4h7v1H38zM4 5h1v1H4zM10 5h1v1H10zM12 5h1v1H12zM16 5h2v1H16zM20 5h2v1H20zM23 5h1v1H23zM26 5h3v1H26zM31 5h1v1H31zM34 5h3v1H34zM38 5h1v1H38zM44 5h1v1H44zM4 6h1v1H4zM6 6h3v1H6zM10 6h1v1H10zM15 6h1v1H15zM17 6h3v1H17zM23 6h1v1H23zM25 6h4v1H25zM31 6h2v1H31zM35 6h1v1H35zM38 6h1v1H38zM40 6h3v1H40zM44 6h1v1H44zM4 7h1v1H4zM6 7h3v1H6zM10 7h1v1H10zM14 7h1v1H14zM17 7h1v1H17zM19 7h3v1H19zM25 7h7v1H25zM33 7h3v1H33zM38 7h1v1H38zM40 7h3v1H40zM44 7h1v1H44zM4 8h1v1H4zM6 8h3v1H6zM10 8h1v1H10zM12 8h4v1H12zM17 8h3v1H17zM23 8h1v1H23zM26 8h3v1H26zM30 8h2v1H30zM33 8h3v1H33zM38 8h1v1H38zM40 8h3v1H40zM44 8h1v1H44zM4 9h1v1H4zM10 9h1v1H10zM13 9h1v1H13zM16 9h1v1H16zM18 9h1v1H18zM21 9h3v1H21zM25 9h1v1H25zM27 9h2v1H27zM31 9h3v1H31zM35 9h1v1H35zM38 9h1v1H38zM44 9h1v1H44zM4 10h7v1H4zM12 10h1v1H12zM14 10h1v1H14zM16 10h1v1H16zM18 10h1v1H18zM20 10h1v1H20zM22 10h1v1H22zM24 10h1v1H24zM26 10h1v1H26zM28 10h1v1H28zM30 10h1v1H30zM32 10h1v1H32zM34 10h1v1H34zM36 10h1v1H36zM38 10h7v1H38zM13 11h1v1H13zM16 11h2v1H16zM19 11h13v1H19zM33 11h3v1H33zM4 12h1v1H4zM6 12h1v1H6zM8 12h1v1H8zM10 12h1v1H10zM15 12h1v1H15zM17 12h1v1H17zM21 12h2v1H21zM25 12h1v1H25zM28 12h2v1H28zM33 12h2v1H33zM40 12h1v1H40zM43 12h1v1H43zM4 13h1v1H4zM6 13h1v1H6zM11 13h2v1H11zM14 13h2v1H14zM17 13h4v1H17zM25 13h2v1H25zM28 13h1v1H28zM32 13h1v1H32zM34 13h1v1H34zM36 13h1v1H36zM43 13h2v1H43zM6 14h3v1H6zM10 14h3v1H10zM14 14h4v1H14zM20 14h1v1H20zM22 14h1v1H22zM24 14h3v1H24zM29 14h1v1H29zM33 14h1v1H33zM37 14h2v1H37zM40 14h5v1H40zM4 15h2v1H4zM7 15h3v1H7zM14 15h1v1H14zM17 15h1v1H17zM19 15h3v1H19zM25 15h1v1H25zM29 15h1v1H29zM31 15h3v1H31zM35 15h1v1H35zM38 15h2v1H38zM4 16h1v1H4zM6 16h1v1H6zM8 16h1v1H8zM10 16h1v1H10zM14 16h2v1H14zM19 16h3v1H19zM24 16h6v1H24zM31 16h4v1H31zM36 16h3v1H36zM41 16h1v1H41zM6 17h4v1H6zM11 17h1v1H11zM17 17h4v1H17zM23 17h5v1H23zM29 17h1v1H29zM31 17h4v1H31zM36 17h2v1H36zM42 17h1v1H42zM44 17h1v1H44zM4 18h1v1H4zM7 18h2v1H7zM10 18h2v1H10zM13 18h2v1H13zM18 18h2v1H18zM22 18h3v1H22zM26 18h1v1H26zM37 18h1v1H37zM40 18h2v1H40zM43 18h2v1H43zM6 19h3v1H6zM11 19h1v1H11zM14 19h2v1H14zM18 19h1v1H18zM21 19h2v1H21zM24 19h3v1H24zM28 19h3v1H28zM32 19h4v1H32zM38 19h3v1H38zM4 20h2v1H4zM7 20h4v1H7zM13 20h1v1H13zM15 20h2v1H15zM19 20h7v1H19zM29 20h3v1H29zM33 20h1v1H33zM36 20h1v1H36zM38 20h1v1H38zM44 20h1v1H44zM4 21h1v1H4zM6 21h3v1H6zM12 21h2v1H12zM16 21h1v1H16zM18 21h1v1H18zM20 21h1v1H20zM24 21h2v1H24zM27 21h2v1H27zM30 21h1v1H30zM32 21h1v1H32zM36 21h4v1H36zM41 21h1v1H41zM43 21h2v1H43zM4 22h2v1H4zM7 22h1v1H7zM10 22h1v1H10zM16 22h2v1H16zM21 22h1v1H21zM26 22h1v1H26zM28 22h1v1H28zM34 22h1v1H34zM36 22h1v1H36zM43 22h2v1H43zM4 23h1v1H4zM6 23h1v1H6zM8 23h2v1H8zM11 23h1v1H11zM14 23h1v1H14zM16 23h3v1H16zM20 23h1v1H20zM23 23h1v1H23zM25 23h3v1H25zM29 23h1v1H29zM31 23h1v1H31zM33 23h2v1H33zM36 23h1v1H36zM39 23h3v1H39zM43 23h1v1H43zM4 24h1v1H4zM6 24h2v1H6zM10 24h1v1H10zM13 24h4v1H13zM18 24h3v1H18zM23 24h2v1H23zM26 24h5v1H26zM32 24h1v1H32zM35 24h1v1H35zM37 24h2v1H37zM40 24h1v1H40zM44 24h1v1H44zM4 25h1v1H4zM6 25h1v1H6zM8 25h1v1H8zM13 25h2v1H13zM16 25h1v1H16zM19 25h1v1H19zM24 25h3v1H24zM30 25h1v1H30zM32 25h1v1H32zM36 25h1v1H36zM38 25h1v1H38zM44 25h1v1H44zM4 26h3v1H4zM8 26h7v1H8zM18 26h1v1H18zM25 26h2v1H25zM28 26h1v1H28zM30 26h1v1H30zM32 26h2v1H32zM36 26h1v1H36zM38 26h3v1H38zM42 26h3v1H42zM8 27h1v1H8zM14 27h1v1H14zM16 27h1v1H16zM19 27h1v1H19zM21 27h5v1H21zM29 27h1v1H29zM31 27h1v1H31zM33 27h2v1H33zM36 27h2v1H36zM41 27h1v1H41zM43 27h2v1H43zM5 28h3v1H5zM10 28h1v1H10zM13 28h2v1H13zM16 28h1v1H16zM18 28h1v1H18zM20 28h3v1H20zM25 28h1v1H25zM28 28h2v1H28zM31 28h1v1H31zM33 28h1v1H33zM36 28h4v1H36zM41 28h1v1H41zM44 28h1v1H44zM4 29h1v1H4zM6 29h2v1H6zM12 29h1v1H12zM18 29h2v1H18zM21 29h2v1H21zM25 29h2v1H25zM28 29h1v1H28zM34 29h1v1H34zM36 29h4v1H36zM41 29h1v1H41zM43 29h2v1H43zM4 30h3v1H4zM8 30h3v1H8zM12 30h2v1H12zM15 30h1v1H15zM17 30h2v1H17zM22 30h1v1H22zM24 30h1v1H24zM26 30h1v1H26zM28 30h3v1H28zM36 30h1v1H36zM42 30h3v1H42zM4 31h1v1H4zM8 31h1v1H8zM12 31h2v1H12zM16 31h1v1H16zM20 31h4v1H20zM25 31h1v1H25zM28 31h4v1H28zM33 31h3v1H33zM39 31h1v1H39zM6 32h3v1H6zM10 32h1v1H10zM17 32h2v1H17zM20 32h2v1H20zM27 32h1v1H27zM29 32h1v1H29zM32 32h1v1H32zM36 32h4v1H36zM44 32h1v1H44zM11 33h4v1H11zM16 33h3v1H16zM21 33h1v1H21zM23 33h1v1H23zM25 33h2v1H25zM28 33h2v1H28zM32 33h1v1H32zM34 33h4v1H34zM41 33h4v1H41zM4 34h1v1H4zM6 34h3v1H6zM10 34h1v1H10zM13 34h2v1H13zM16 34h1v1H16zM19 34h1v1H19zM21 34h1v1H21zM25 34h2v1H25zM29 34h2v1H29zM37 34h1v1H37zM39 34h3v1H39zM43 34h2v1H43zM5 35h1v1H5zM7 35h3v1H7zM11 35h1v1H11zM15 35h1v1H15zM18 35h2v1H18zM21 35h1v1H21zM23 35h1v1H23zM25 35h3v1H25zM29 35h1v1H29zM32 35h2v1H32zM38 35h2v1H38zM44 35h1v1H44zM4 36h1v1H4zM7 36h1v1H7zM9 36h5v1H9zM15 36h1v1H15zM19 36h1v1H19zM21 36h1v1H21zM24 36h2v1H24zM27 36h7v1H27zM36 36h5v1H36zM12 37h1v1H12zM16 37h1v1H16zM18 37h2v1H18zM21 37h1v1H21zM24 37h1v1H24zM29 37h2v1H29zM32 37h2v1H32zM35 37h2v1H35zM40 37h1v1H40zM43 37h1v1H43zM4 38h7v1H4zM15 38h3v1H15zM19 38h1v1H19zM22 38h1v1H22zM24 38h2v1H24zM28 38h2v1H28zM35 38h2v1H35zM38 38h1v1H38zM40 38h5v1H40zM4 39h1v1H4zM10 39h1v1H10zM13 39h3v1H13zM19 39h5v1H19zM27 39h1v1H27zM29 39h1v1H29zM33 39h1v1H33zM36 39h1v1H36zM40 39h2v1H40zM44 39h1v1H44zM4 40h1v1H4zM6 40h3v1H6zM10 40h1v1H10zM12 40h2v1H12zM17 40h1v1H17zM20 40h1v1H20zM22 40h2v1H22zM31 40h2v1H31zM36 40h6v1H36zM44 40h1v1H44zM4 41h1v1H4zM6 41h3v1H6zM10 41h1v1H10zM13 41h1v1H13zM16 41h3v1H16zM22 41h1v1H22zM24 41h2v1H24zM28 41h2v1H28zM32 41h3v1H32zM40 41h1v1H40zM42 41h3v1H42zM4 42h1v1H4zM6 42h3v1H6zM10 42h1v1H10zM12 42h2v1H12zM18 42h1v1H18zM25 42h2v1H25zM30 42h1v1H30zM34 42h1v1H34zM37 42h1v1H37zM40 42h5v1H40zM4 43h1v1H4zM10 43h1v1H10zM13 43h1v1H13zM16 43h1v1H16zM19 43h4v1H19zM25 43h3v1H25zM29 43h2v1H29zM33 43h1v1H33zM35 43h3v1H35zM43 43h1v1H43zM4 44h7v1H4zM12 44h1v1H12zM19 44h3v1H19zM25 44h1v1H25zM28 44h2v1H28zM32 44h2v1H32zM36 44h2v1H36zM41 44h1v1H41zM43 44h2v1H43z"
+fill="black"
+/>
 
-⚠️
-Your BOI QR image could not be found.
-
-<br><br>
-
-Make sure your QR file is named:
-
-<br><br>
-
-<b>
-boi-qr.png
-</b>
-
-<br><br>
-
-and is uploaded in the same GitHub
-folder as this index.html file.
-
+</svg>
 </div>
 
 
+<div class="upi">
 
-<!-- =================================
-     PAYMENT INSTRUCTIONS
-================================= -->
+UPI ID: shankarsp25-3@okaxis
+
+<br>
+
+<button
+class="blue"
+onclick="copyUPI()"
+>
+📋 Copy UPI ID
+</button>
+
+</div>
+
 
 <div class="instructions">
 
@@ -835,84 +567,49 @@ How to pay:
 
 <br><br>
 
-
-1️⃣ Select a quick amount
-
-<br>
-
-
-2️⃣ Or enter any amount using
-<b>Custom Amount</b>
+1️⃣ Select ₹1, ₹5, ₹10, ₹20, ₹50 or ₹100.
 
 <br>
 
-
-3️⃣ Tap
-<b>
-Use Custom Amount
-</b>
+2️⃣ Or enter <b>any amount</b> above and tap
+<b>Use Custom Amount</b>.
 
 <br>
 
-
-4️⃣ Open Google Pay, PhonePe,
-Paytm or another UPI app
+3️⃣ Open Google Pay, PhonePe, Paytm or another UPI app.
 
 <br>
 
-
-5️⃣ Tap the
-<b>
-Scan QR
-</b>
-option
+4️⃣ Tap <b>Scan QR</b>.
 
 <br>
 
-
-6️⃣ Scan the BOI QR displayed above
-
-<br>
-
-
-7️⃣ Enter the selected amount
+5️⃣ Scan the QR displayed above.
 
 <br>
 
+6️⃣ Enter the selected amount:
+<b id="instructionAmount">₹1</b>.
 
-8️⃣ Complete the payment in your UPI app
+<br>
+
+7️⃣ Complete the payment inside your UPI app.
 
 </div>
 
 
-
-<!-- =================================
-     SECURITY
-================================= -->
-
 <div class="warning">
 
-🔒
-<b>
-Security Notice
-</b>
+🔒 <b>Security:</b>
 
 <br><br>
 
 Never enter your UPI PIN on this website.
 
-Your UPI PIN should only be entered
-inside your trusted UPI application.
+Your UPI PIN should only be entered inside your trusted UPI application.
 
 </div>
 
-
-
-<!-- =================================
-     COPY PAYMENT DETAILS
-================================= -->
-
-<div style="text-align:center;margin-top:15px;">
 
 <button
 class="blue"
@@ -921,26 +618,16 @@ onclick="copyPaymentInfo()"
 📋 Copy Payment Details
 </button>
 
-</div>
-
 
 <div
 class="success"
-id="copySuccess"
+id="success"
 >
-
-Payment details copied successfully!
+Copied successfully!
+</div>
 
 </div>
 
-
-</div>
-
-
-
-<!-- =================================
-     FOOTER
-================================= -->
 
 <footer>
 
@@ -952,231 +639,326 @@ Happy Independence Day
 
 </footer>
 
-
 </div>
-
 
 
 <script>
 
-
-/* =================================
-   CARD CREATOR
-================================= */
-
-function createCard() {
-
-    const name =
-    document
-    .getElementById("name")
-    .value
-    .trim();
-
-
-    const photoInput =
-    document
-    .getElementById("photo");
-
-
-    if (!name) {
-
-        alert(
-        "Please enter your name."
-        );
-
-        return;
-    }
-
-
-    if (!photoInput.files.length) {
-
-        alert(
-        "Please upload your photo."
-        );
-
-        return;
-    }
-
-
-    document
-    .getElementById("userName")
-    .textContent = name;
-
-
-    const reader =
-    new FileReader();
-
-
-    reader.onload =
-    function(event) {
-
-        document
-        .getElementById("userPhoto")
-        .src =
-        event.target.result;
-
-
-        document
-        .getElementById("card")
-        .style.display =
-        "block";
-
-
-        document
-        .getElementById("cardButtons")
-        .style.display =
-        "block";
-
-
-        document
-        .getElementById("card")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-    };
-
-
-    reader.readAsDataURL(
-    photoInput.files[0]
-    );
-
-}
-
-
-
-/* =================================
-   PAYMENT AMOUNT
-================================= */
-
 let selectedAmount = 1;
 
 
+function createCard(){
 
-function selectAmount(
-amount,
-button
-) {
+  const name =
+  document.getElementById("name")
+  .value
+  .trim();
 
-    selectedAmount =
-    amount;
-
-
-    document
-    .getElementById("customAmount")
-    .value = "";
+  const photo =
+  document.getElementById("photo");
 
 
-    document
-    .getElementById("amountDisplay")
-    .textContent =
-    "Selected Amount: ₹" +
-    amount;
-
-
-    document
-    .querySelectorAll(
-    ".amount-buttons button"
-    )
-    .forEach(
-    function(btn) {
-
-        btn.classList.remove(
-        "selected"
-        );
-
-    });
-
-
-    button.classList.add(
-    "selected"
-    );
-
-}
-
-
-
-/* =================================
-   CUSTOM AMOUNT
-================================= */
-
-function useCustomAmount() {
-
-    const input =
-    document
-    .getElementById("customAmount");
-
-
-    const amount =
-    Number(input.value);
-
-
-    if (!amount || amount < 1) {
-
-        alert(
-        "Please enter an amount of ₹1 or more."
-        );
-
-        input.focus();
-
-        return;
-    }
-
-
-    if (!Number.isInteger(amount)) {
-
-        alert(
-        "Please enter a whole number, such as ₹37 or ₹101."
-        );
-
-        input.focus();
-
-        return;
-    }
-
-
-    selectedAmount =
-    amount;
-
-
-    document
-    .getElementById("amountDisplay")
-    .textContent =
-    "Selected Amount: ₹" +
-    amount;
-
-
-    document
-    .querySelectorAll(
-    ".amount-buttons button"
-    )
-    .forEach(
-    function(btn) {
-
-        btn.classList.remove(
-        "selected"
-        );
-
-    });
-
+  if(!name){
 
     alert(
-    "Please scan the BOI QR and enter ₹" +
-    amount +
-    " in your UPI app."
+      "Please enter your name."
     );
+
+    return;
+  }
+
+
+  if(!photo.files.length){
+
+    alert(
+      "Please upload your photo."
+    );
+
+    return;
+  }
+
+
+  document
+  .getElementById("userName")
+  .textContent = name;
+
+
+  const reader =
+  new FileReader();
+
+
+  reader.onload =
+  function(e){
+
+    document
+    .getElementById("userPhoto")
+    .src = e.target.result;
+
+
+    document
+    .getElementById("card")
+    .style.display = "block";
+
+
+    document
+    .getElementById("cardButtons")
+    .style.display = "block";
+
+
+    document
+    .getElementById("card")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+  };
+
+
+  reader.readAsDataURL(
+    photo.files[0]
+  );
 
 }
 
 
+function selectAmount(
+  amount,
+  button
+){
 
-/* =================================
-   COPY PAYMENT DETAILS
-================================= */
+  selectedAmount =
+  amount;
 
-function copyPaymentInfo() {
 
-    const text =
-    "🇮🇳 Independence Day App Support 🇮🇳\n\n" +
+  document
+  .getElementById("customAmount")
+  .value = "";
 
-   
+
+  updateAmount();
+
+
+  document
+  .querySelectorAll(
+    ".amount-buttons button"
+  )
+  .forEach(
+    b =>
+    b.classList.remove(
+      "selected"
+    )
+  );
+
+
+  button.classList.add(
+    "selected"
+  );
+
+}
+
+
+function useCustomAmount(){
+
+  const value =
+  Number(
+    document
+    .getElementById("customAmount")
+    .value
+  );
+
+
+  if(!value || value < 1){
+
+    alert(
+      "Please enter an amount of ₹1 or more."
+    );
+
+    return;
+  }
+
+
+  if(!Number.isInteger(value)){
+
+    alert(
+      "Please enter a whole number, such as ₹37 or ₹101."
+    );
+
+    return;
+  }
+
+
+  selectedAmount =
+  value;
+
+
+  document
+  .querySelectorAll(
+    ".amount-buttons button"
+  )
+  .forEach(
+    b =>
+    b.classList.remove(
+      "selected"
+    )
+  );
+
+
+  updateAmount();
+
+
+  alert(
+    "Please scan the QR and enter ₹"
+    + value +
+    " in your UPI app."
+  );
+
+}
+
+
+function updateAmount(){
+
+  document
+  .getElementById("amountDisplay")
+  .textContent =
+  "Selected Amount: ₹"
+  + selectedAmount;
+
+
+  document
+  .getElementById("instructionAmount")
+  .textContent =
+  "₹"
+  + selectedAmount;
+
+}
+
+
+function copyUPI(){
+
+  const id =
+  "shankarsp25-3@okaxis";
+
+
+  if(navigator.clipboard){
+
+    navigator.clipboard
+    .writeText(id)
+    .then(
+      () => showSuccess()
+    )
+    .catch(
+      () =>
+      alert(
+        "UPI ID: " + id
+      )
+    );
+
+  }else{
+
+    alert(
+      "UPI ID: " + id
+    );
+
+  }
+
+}
+
+
+function copyPaymentInfo(){
+
+  const text =
+  "🇮🇳 Independence Day App Support 🇮🇳\n\n"
+  +
+  "Amount: ₹"
+  + selectedAmount
+  + "\n\n"
+  +
+  "UPI ID: shankarsp25-3@okaxis\n\n"
+  +
+  "Please scan the QR or use the UPI ID in your UPI app.";
+
+
+  if(navigator.clipboard){
+
+    navigator.clipboard
+    .writeText(text)
+    .then(
+      () => showSuccess()
+    )
+    .catch(
+      () => alert(text)
+    );
+
+  }else{
+
+    alert(text);
+
+  }
+
+}
+
+
+function showSuccess(){
+
+  const success =
+  document
+  .getElementById("success");
+
+
+  success.style.display =
+  "block";
+
+
+  setTimeout(
+    () =>
+    success.style.display =
+    "none",
+    2500
+  );
+
+}
+
+
+function shareWhatsApp(){
+
+  const name =
+  document
+  .getElementById("name")
+  .value
+  .trim();
+
+
+  const message =
+  "🇮🇳 Happy Independence Day 🇮🇳\n\n"
+  +
+  name
+  +
+  " wishes you a very Happy Independence Day!\n\n"
+  +
+  "जय हिन्द! 🇮🇳";
+
+
+  window.open(
+    "https://wa.me/?text="
+    +
+    encodeURIComponent(
+      message
+    ),
+    "_blank"
+  );
+
+}
+
+
+function saveCard(){
+
+  alert(
+    "The personalised card is ready. Please take a screenshot of the card to save or share it."
+  );
+
+}
+
+</script>
+
+</body>
+</html>
