@@ -1,97 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>80th Independence Day 2026 Photo Maker 🇮🇳</title>
+<meta name="description" content="Create your personalized 80th Independence Day 2026 ID card.">
+<meta property="og:title" content="80th Independence Day 2026 ID Card Maker">
+<meta property="og:description" content="Add your photo and name and download your patriotic card.">
 
-<meta name="description"
-content="Create your personalized 80th Independence Day 2026 card with your name and photo.">
-
-<meta property="og:title"
-content="🇮🇳 80th Independence Day 2026 Photo Maker">
-
-<meta property="og:description"
-content="Add your photo and name and create your personalized Independence Day card.">
+<title>80th Independence Day 2026 ID Card Maker</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
 margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(135deg,#fff8f0,#f3faf3);
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#fff8f0,#f5fbf5);
 color:#172033;
 }
 
-.container{
-max-width:1100px;
+.wrap{
+max-width:1080px;
 margin:auto;
-padding:20px 14px 40px;
+padding:22px 14px 40px;
 }
 
 header{
 text-align:center;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .badge{
 display:inline-block;
-padding:8px 14px;
-border-radius:30px;
-background:white;
+background:#fff;
 border:1px solid #e3e8ef;
+border-radius:50px;
+padding:7px 12px;
 font-size:12px;
-font-weight:bold;
+font-weight:800;
 color:#000080;
 }
 
 h1{
-font-size:clamp(28px,5vw,44px);
-margin:12px 0 6px;
+font-size:clamp(26px,5vw,42px);
+margin:11px 0 6px;
 }
 
 header p{
 color:#687386;
-margin:0;
 }
 
 .app{
 display:grid;
-grid-template-columns:320px 1fr;
-gap:20px;
+grid-template-columns:310px 1fr;
+gap:18px;
 }
 
-.panel,
-.preview{
-background:white;
+.panel,.preview{
+background:#fff;
 border:1px solid #e1e7ef;
 border-radius:20px;
 box-shadow:0 15px 40px rgba(20,35,60,.08);
 }
 
 .panel{
-padding:20px;
+padding:19px;
 }
 
 .panel h2{
-margin:0 0 15px;
-font-size:19px;
+font-size:18px;
+margin:0 0 14px;
 }
 
 label{
 display:block;
 font-size:13px;
-font-weight:bold;
+font-weight:800;
 margin:14px 0 7px;
 }
 
-input[type=text],
-input[type=number]{
+input[type=text]{
 width:100%;
 padding:13px;
 border:1px solid #d5dce6;
@@ -99,13 +88,8 @@ border-radius:11px;
 font-size:16px;
 }
 
-input:focus{
-outline:2px solid rgba(0,0,128,.12);
-border-color:#000080;
-}
-
 .upload{
-padding:16px;
+padding:15px;
 border:2px dashed #ccd5e1;
 border-radius:14px;
 text-align:center;
@@ -115,7 +99,6 @@ background:#fafbfd;
 
 .upload strong{
 display:block;
-margin-bottom:4px;
 }
 
 .upload small{
@@ -128,100 +111,33 @@ display:none;
 
 .actions{
 display:grid;
-gap:10px;
-margin-top:18px;
+gap:9px;
+margin-top:17px;
 }
 
-button,
-.donate{
+button{
 border:0;
 border-radius:11px;
-padding:14px;
+padding:13px;
 font-size:15px;
-font-weight:bold;
+font-weight:800;
 cursor:pointer;
 }
 
-.download{
-background:linear-gradient(135deg,#ff9933,#f47721);
-color:white;
+.primary{
+background:linear-gradient(135deg,#ff9933,#f47a22);
+color:#fff;
 }
 
-.reset{
+.secondary{
 background:#edf1f6;
 color:#172033;
-}
-
-.support{
-margin-top:18px;
-padding:17px;
-border-radius:16px;
-background:linear-gradient(135deg,#fff8ed,#f4fff3);
-border:1px solid #e5eadf;
-text-align:center;
-}
-
-.support-title{
-font-size:18px;
-font-weight:bold;
-margin-bottom:8px;
-}
-
-.support p{
-font-size:13px;
-line-height:1.55;
-color:#596579;
-margin:7px 0;
-}
-
-.upi-buttons{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-margin-top:14px;
-}
-
-.upi-btn{
-border:0;
-border-radius:10px;
-padding:12px 8px;
-background:linear-gradient(135deg,#138808,#0b6b06);
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-.upi-btn:hover{
-opacity:.9;
-}
-
-.custom-box{
-margin-top:10px;
-display:none;
-}
-
-.custom-box input{
-margin-bottom:8px;
-}
-
-.custom-pay{
-width:100%;
-background:#000080;
-color:white;
-}
-
-.upi-note{
-font-size:11px;
-color:#7b8492;
-margin-top:10px;
-line-height:1.4;
 }
 
 .hint{
 font-size:12px;
 color:#687386;
 line-height:1.5;
-margin-top:16px;
 }
 
 .preview{
@@ -229,7 +145,7 @@ padding:12px;
 }
 
 .canvasbox{
-border-radius:14px;
+border-radius:13px;
 overflow:hidden;
 background:#eee;
 }
@@ -247,32 +163,72 @@ color:#687386;
 margin-top:8px;
 }
 
-.footer{
+/* SUPPORT SECTION */
+
+.support{
+margin:22px auto 0;
+max-width:900px;
+background:#fff;
+border:1px solid #e4e8ef;
+border-radius:20px;
+padding:22px;
 text-align:center;
-margin-top:25px;
-color:#687386;
-font-size:12px;
-line-height:1.6;
+box-shadow:0 12px 35px rgba(21,36,60,.07);
 }
 
-.footer strong{
-color:#000080;
+.support h2{
+margin:0 0 8px;
+font-size:22px;
+}
+
+.support p{
+margin:6px 0;
+color:#687386;
+line-height:1.5;
+}
+
+.upi-id{
+font-weight:800;
+color:#172033;
+word-break:break-all;
+margin:10px 0 14px;
+}
+
+.qr{
+width:240px;
+height:240px;
+max-width:80vw;
+margin:10px auto;
+display:block;
+border-radius:10px;
+}
+
+.pay-btn{
+display:inline-block;
+text-decoration:none;
+background:linear-gradient(135deg,#ff9933,#f47721);
+color:#fff;
+padding:13px 20px;
+border-radius:12px;
+font-weight:800;
+margin-top:10px;
+}
+
+.qr-note{
+font-size:12px!important;
 }
 
 @media(max-width:780px){
-
 .app{
 grid-template-columns:1fr;
 }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="wrap">
 
 <header>
 
@@ -280,55 +236,35 @@ grid-template-columns:1fr;
 🇮🇳 15 AUGUST 2026 • 80TH INDEPENDENCE DAY
 </div>
 
-<h1>
-Independence Day Photo Maker
-</h1>
+<h1>Independence Day ID Card Maker</h1>
 
-<p>
-Create your own patriotic card in seconds. 🇮🇳
-</p>
+<p>Create your own patriotic card in seconds.</p>
 
 </header>
 
 
 <div class="app">
 
-
 <section class="panel">
 
-<h2>
-Personalize Your Card
-</h2>
+<h2>Personalize your card</h2>
 
-
-<label>
-Name / नाम
-</label>
+<label>Name</label>
 
 <input
 id="name"
 type="text"
 maxlength="30"
-placeholder="Enter your name / अपना नाम लिखें"
+placeholder="Enter your name"
 >
 
+<label>Photo</label>
 
-<label>
-Photo / फोटो
-</label>
+<label class="upload" for="photo">
 
-<label
-class="upload"
-for="photo"
->
+<strong>📷 Choose your photo</strong>
 
-<strong>
-📷 Choose Your Photo / फोटो चुनें
-</strong>
-
-<small>
-JPG, PNG or WebP
-</small>
+<small>JPG, PNG or WebP</small>
 
 </label>
 
@@ -338,138 +274,21 @@ type="file"
 accept="image/*"
 >
 
-
 <div class="actions">
 
-<button
-class="download"
-id="download"
->
-⬇ Download My Card
+<button class="primary" id="download">
+⬇ Download ID Card
 </button>
 
-<button
-class="reset"
-id="reset"
->
+<button class="secondary" id="reset">
 ↻ Reset
 </button>
 
 </div>
 
-
-<!-- SUPPORT SECTION -->
-
-<div class="support">
-
-<div class="support-title">
-❤️ Support My Effort
-</div>
-
-<p>
-🇮🇳 <b>एक छोटी सी कोशिश • A Small Effort</b>
-</p>
-
-<p>
-मैंने इस app को अपने समय, मेहनत और creativity से बनाया है।
-अगर आपको यह पसंद आया, तो अपनी इच्छा के अनुसार छोटा सा contribution देकर मेरे प्रयास को support कर सकते हैं।
-🙏
-</p>
-
-<p>
-I created this app with my own time, effort and creativity.
-If you enjoyed using it, you can support my work with a small voluntary contribution.
-Every bit of encouragement means a lot. ❤️
-</p>
-
-
-<div class="upi-buttons">
-
-<button
-class="upi-btn"
-onclick="payUPI(10)"
->
-❤️ ₹10
-</button>
-
-<button
-class="upi-btn"
-onclick="payUPI(20)"
->
-❤️ ₹20
-</button>
-
-<button
-class="upi-btn"
-onclick="payUPI(50)"
->
-❤️ ₹50
-</button>
-
-<button
-class="upi-btn"
-onclick="payUPI(100)"
->
-❤️ ₹100
-</button>
-
-</div>
-
-
-<button
-class="upi-btn"
-style="margin-top:8px;width:100%;"
-onclick="showCustomAmount()"
->
-💝 Custom Amount
-</button>
-
-
-<div
-id="customBox"
-class="custom-box"
->
-
-<input
-id="customAmount"
-type="number"
-min="1"
-max="100000"
-placeholder="Enter amount ₹"
->
-
-<button
-class="custom-pay"
-onclick="payCustom()"
->
-❤️ Support with This Amount
-</button>
-
-</div>
-
-
-<div class="upi-note">
-
-UPI Support is completely voluntary.
-<br>
-
-कोई payment जरूरी नहीं है। आपका support मेरी मेहनत के लिए प्रेरणा है। ❤️
-
-</div>
-
-</div>
-
-
 <p class="hint">
-
-🔒 आपकी photo केवल आपके browser में process होती है।
-यह app आपकी photo को किसी server पर upload नहीं करता।
-
-<br><br>
-
-🔒 Your photo is processed only in your browser.
-It is not uploaded to any server by this app.
-
+Your photo is processed only in your browser.
+It is not uploaded by this app.
 </p>
 
 </section>
@@ -482,442 +301,238 @@ It is not uploaded to any server by this app.
 <canvas
 id="card"
 width="1200"
-height="700"
-></canvas>
+height="700">
+</canvas>
 
 </div>
 
 <div class="note">
-1200 × 700 px • Ready for Facebook, WhatsApp & Instagram
+1200 × 700 px • Ready for Facebook, WhatsApp and Instagram
 </div>
 
 </section>
 
 </div>
-
-
-<div class="footer">
-
-🇮🇳 <strong>Happy 80th Independence Day 2026</strong> 🇮🇳
-
-<br>
-
-Made with ❤️ and मेहनत
-
-<br>
-
-<strong>
-Jai Hind • जय हिंद • वंदे मातरम्
-</strong>
-
 </div>
 
-</div>
+
+<!-- SUPPORT SECTION -->
+
+<section class="support">
+
+<h2>❤️ Support My Effort</h2>
+
+<p>
+If you enjoy this app and would like to support my work,
+you can make a voluntary contribution.
+</p>
+
+<p class="upi-id">
+UPI ID: shankarsp25-3@okaxis
+</p>
+
+
+<!-- UPI QR CODE -->
+
+<img
+class="qr"
+src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYgAAAGIAQAAAABzOEqLAAAC9UlEQVR4nO1by27DMAwjh/7/L3MHvZweBvQQT1W8Al3WhpgVQaJFyRQ+/Pn5FHAQB3EQB3EQAxEvAKBdCyBEUYT/ln2tuqOpHVMQLwD2nEF3DEX7wPwDc4/f0dWOKQjzB5jRUU+eMDdYcIRPmtoxBfG6/snwiecqu9y+qucirv6w5CTCXpCWmNm4quci3B/XEBAEUE4l1OWOnnZMQUBSPGr98aqbe9oxBXEhB9tZBbfH/uofVvVchNUftoWSM7i5RYxdluL7bat6OoIQLDIgiw2KoCDZfleI71vb8f2IyldZkweZwwtA2a43iL2nHaMQJOihIMoLQoL08BBOvtqESL2EiELDWT3IxF0h8vjjfoT5w3KVswQAUOkcrMrWplU9F1EKbqqG9rHV5bSafdEUm9oxBcHMUBEJKDHXmNypPJi/px2jEAoGcakE9Gig7JJCMElnOwYgPF8p6NxDJTse2YmiB0tTO0YhrPSjTGaXNz5ce4cJXILvhBvbMQARfI4qMqJNm6xem65dq3o4gqqanBAEEnQS8fqQ0WVvbMcABCTJdSp//CGwL22PeD96+92I3OVqKdCrHeXJixk+Xe0YhlB0ykuoYhYjjPp896oeiLjW5151IKXeGjg5/dq9+WrJVjHXAEUPPS83rerhCGNwSjlzRQESAVJWgCTDN7ZjACL0dqu/XcVS5qgaj0sNvqcdoxAMGdeeuCtVxeIUqGiANLZjFsLrPmdxC5bSE2OCtL8dX41Y56kVKm9MtmfzVqzRn552TEOQPpUYMiJJy2AxfHLmS/bFB7IVWJK7Tf3kVZ4B6WnHFMTbfGJ2QuDveSznzPvsi4/oOXnvVtmlzYMgrFGHnnbMQpjIayTCxQ2u9l46up3t+H7E5XwURInMceqoSci6pakdMxGsdlRWiRC9Q3Ly1f2It/Nqfl4wj9b6aHVwyq5VPR6RMwusipAg1oIQZ97nfsSit9d4e426h8K4bIt72jEF8XZ49pb/cRAHcRAHcRDzEL/huqXrUvli9gAAAABJRU5ErkJggg=="
+alt="UPI QR code for Shankar Sudhakar Pingulkar"
+>
+
+
+<p class="qr-note">
+📱 Scan this QR code with Google Pay,
+PhonePe, Paytm or any UPI app.
+</p>
+
+
+<!-- UPI PAYMENT BUTTON -->
+
+<a
+class="pay-btn"
+href="upi://pay?pa=shankarsp25-3%40okaxis&pn=Shankar%20Sudhakar%20Pingulkar%20(Sachin)&cu=INR"
+>
+💳 Support via UPI
+</a>
+
+</section>
 
 
 <script>
 
+const c=document.getElementById("card"),
+x=c.getContext("2d"),
+n=document.getElementById("name"),
+f=document.getElementById("photo");
 
-/* =========================
-   UPI PAYMENT
-========================= */
-
-const UPI_ID = "shankarsp25-3@okaxis";
-
-const UPI_NAME = "Shankar";
+let img=null;
 
 
-function payUPI(amount){
+function rr(a,b,w,h,r){
 
-if(!amount || amount <= 0){
-return;
-}
+x.beginPath();
 
-const upiURL =
-"upi://pay" +
-"?pa=" + encodeURIComponent(UPI_ID) +
-"&pn=" + encodeURIComponent(UPI_NAME) +
-"&am=" + encodeURIComponent(amount.toFixed(2)) +
-"&cu=INR";
+x.moveTo(a+r,b);
 
-window.location.href = upiURL;
+x.arcTo(a+w,b,a+w,b+h,r);
 
-}
+x.arcTo(a+w,b+h,a,b+h,r);
 
+x.arcTo(a,b+h,a,b,r);
 
-function showCustomAmount(){
+x.arcTo(a,b,a+w,b,r);
 
-const box =
-document.getElementById("customBox");
-
-box.style.display =
-box.style.display === "block"
-? "none"
-: "block";
+x.closePath();
 
 }
 
 
-function payCustom(){
+function flag(a,b,w,h){
 
-const input =
-document.getElementById("customAmount");
+x.save();
 
-const amount =
-parseFloat(input.value);
+rr(a,b,w,h,12);
 
-if(
-!amount ||
-amount < 1
-){
+x.clip();
 
-alert(
-"Please enter a valid amount.\nकृपया सही राशि दर्ज करें।"
+x.fillStyle="#FF9933";
+x.fillRect(a,b,w,h/3);
+
+x.fillStyle="#fff";
+x.fillRect(a,b+h/3,w,h/3);
+
+x.fillStyle="#138808";
+x.fillRect(a,b+2*h/3,w,h/3);
+
+let cx=a+w/2,
+cy=b+h/2,
+r=Math.min(w,h)*.18;
+
+x.strokeStyle="#000080";
+x.lineWidth=5;
+
+x.beginPath();
+x.arc(cx,cy,r,0,7);
+x.stroke();
+
+x.lineWidth=2;
+
+for(let i=0;i<24;i++){
+
+let q=i*Math.PI*2/24;
+
+x.beginPath();
+
+x.moveTo(cx,cy);
+
+x.lineTo(
+cx+Math.cos(q)*r,
+cy+Math.sin(q)*r
 );
 
-return;
+x.stroke();
 
 }
 
-if(amount > 100000){
-
-alert(
-"Maximum amount is ₹100,000."
-);
-
-return;
-
-}
-
-payUPI(amount);
-
-}
-
-
-/* =========================
-   CARD MAKER
-========================= */
-
-const canvas =
-document.getElementById("card");
-
-const ctx =
-canvas.getContext("2d");
-
-const nameInput =
-document.getElementById("name");
-
-const photoInput =
-document.getElementById("photo");
-
-let userPhoto = null;
-
-
-/* Rounded rectangle */
-
-function roundedRect(x,y,w,h,r){
-
-ctx.beginPath();
-
-ctx.moveTo(x+r,y);
-
-ctx.arcTo(
-x+w,y,
-x+w,y+h,
-r
-);
-
-ctx.arcTo(
-x+w,y+h,
-x,y+h,
-r
-);
-
-ctx.arcTo(
-x,y+h,
-x,y,
-r
-);
-
-ctx.arcTo(
-x,y,
-x+w,y,
-r
-);
-
-ctx.closePath();
+x.restore();
 
 }
 
 
-/* Indian Flag */
+function draw(){
 
-function drawFlag(x,y,w,h){
+let W=1200,
+H=700;
 
-ctx.save();
-
-roundedRect(x,y,w,h,12);
-
-ctx.clip();
+x.clearRect(0,0,W,H);
 
 
-/* Saffron */
+let g=x.createLinearGradient(0,0,W,H);
 
-ctx.fillStyle="#FF9933";
+g.addColorStop(0,"#fff9f3");
+g.addColorStop(.5,"#fff");
+g.addColorStop(1,"#f2faf2");
 
-ctx.fillRect(
-x,
-y,
-w,
-h/3
-);
+x.fillStyle=g;
+x.fillRect(0,0,W,H);
 
 
-/* White */
+x.fillStyle="#FF9933";
+x.fillRect(0,0,W,14);
 
-ctx.fillStyle="#FFFFFF";
-
-ctx.fillRect(
-x,
-y+h/3,
-w,
-h/3
-);
+x.fillStyle="#138808";
+x.fillRect(0,H-14,W,14);
 
 
-/* Green */
+x.fillStyle="#172033";
+x.font="bold 42px Arial";
 
-ctx.fillStyle="#138808";
-
-ctx.fillRect(
-x,
-y+(h*2/3),
-w,
-h/3
-);
-
-
-/* Ashoka Chakra */
-
-const cx=x+w/2;
-const cy=y+h/2;
-const r=Math.min(w,h)*0.18;
-
-ctx.strokeStyle="#000080";
-
-ctx.lineWidth=5;
-
-ctx.beginPath();
-
-ctx.arc(
-cx,
-cy,
-r,
-0,
-Math.PI*2
-);
-
-ctx.stroke();
-
-ctx.lineWidth=2;
-
-for(
-let i=0;
-i<24;
-i++
-){
-
-const angle =
-i*Math.PI*2/24;
-
-ctx.beginPath();
-
-ctx.moveTo(
-cx,
-cy
-);
-
-ctx.lineTo(
-cx+Math.cos(angle)*r,
-cy+Math.sin(angle)*r
-);
-
-ctx.stroke();
-
-}
-
-ctx.restore();
-
-}
-
-
-/* Draw Card */
-
-function drawCard(){
-
-const W=1200;
-const H=700;
-
-
-/* Background */
-
-ctx.clearRect(
-0,
-0,
-W,
-H
-);
-
-const bg =
-ctx.createLinearGradient(
-0,
-0,
-W,
-H
-);
-
-bg.addColorStop(
-0,
-"#fff9f3"
-);
-
-bg.addColorStop(
-0.5,
-"#ffffff"
-);
-
-bg.addColorStop(
-1,
-"#f2faf2"
-);
-
-ctx.fillStyle=bg;
-
-ctx.fillRect(
-0,
-0,
-W,
-H
-);
-
-
-/* Top and bottom tricolor */
-
-ctx.fillStyle="#FF9933";
-
-ctx.fillRect(
-0,
-0,
-W,
-14
-);
-
-ctx.fillStyle="#138808";
-
-ctx.fillRect(
-0,
-H-14,
-W,
-14
-);
-
-
-/* Header */
-
-ctx.fillStyle="#172033";
-
-ctx.font=
-"bold 42px Arial";
-
-ctx.fillText(
+x.fillText(
 "80TH INDEPENDENCE DAY",
 60,
 78
 );
 
-ctx.fillStyle="#000080";
 
-ctx.font=
-"bold 22px Arial";
+x.fillStyle="#000080";
+x.font="bold 22px Arial";
 
-ctx.fillText(
+x.fillText(
 "15 AUGUST 2026",
 60,
 112
 );
 
 
-/* Flag */
-
-drawFlag(
-60,
-150,
-410,
-235
-);
+flag(60,150,410,235);
 
 
-/* Proud message */
+x.fillStyle="#172033";
+x.font="bold 30px Arial";
 
-ctx.fillStyle="#172033";
-
-ctx.font=
-"bold 30px Arial";
-
-ctx.fillText(
+x.fillText(
 "PROUD TO BE AN INDIAN",
 60,
 430
 );
 
-ctx.fillStyle="#687386";
 
-ctx.font=
-"19px Arial";
+x.fillStyle="#687386";
+x.font="19px Arial";
 
-ctx.fillText(
+x.fillText(
 "Celebrating the spirit, unity and pride of India",
 60,
 463
 );
 
 
-/* Photo */
+let px=790,
+py=140,
+pw=320,
+ph=275;
 
-const px=790;
-const py=140;
-const pw=320;
-const ph=275;
 
-ctx.save();
+x.save();
 
-roundedRect(
-px,
-py,
-pw,
-ph,
-25
+rr(px,py,pw,ph,25);
+
+x.clip();
+
+
+if(img){
+
+let s=Math.max(
+pw/img.width,
+ph/img.height
 );
 
-ctx.clip();
+let sw=img.width*s,
+sh=img.height*s;
 
-
-if(userPhoto){
-
-const scale =
-Math.max(
-pw/userPhoto.width,
-ph/userPhoto.height
-);
-
-const sw =
-userPhoto.width*scale;
-
-const sh =
-userPhoto.height*scale;
-
-ctx.drawImage(
-userPhoto,
+x.drawImage(
+img,
 px+(pw-sw)/2,
 py+(ph-sh)/2,
 sw,
@@ -926,246 +541,119 @@ sh
 
 }else{
 
-ctx.fillStyle="#e5eaf0";
+x.fillStyle="#e5eaf0";
 
-ctx.fillRect(
+x.fillRect(
 px,
 py,
 pw,
 ph
 );
 
-ctx.fillStyle="#7d8998";
+x.fillStyle="#7d8998";
+x.font="bold 25px Arial";
+x.textAlign="center";
 
-ctx.font=
-"bold 25px Arial";
-
-ctx.textAlign="center";
-
-ctx.fillText(
+x.fillText(
 "YOUR PHOTO",
 px+pw/2,
 py+ph/2
 );
 
-ctx.textAlign="left";
+x.textAlign="left";
 
 }
 
-ctx.restore();
+x.restore();
 
 
-/* Photo border */
+x.fillStyle="#000080";
+x.font="bold 34px Arial";
+x.textAlign="center";
 
-ctx.strokeStyle="#ffffff";
-
-ctx.lineWidth=8;
-
-roundedRect(
-px,
-py,
-pw,
-ph,
-25
-);
-
-ctx.stroke();
-
-
-/* Name */
-
-const personName =
-nameInput.value.trim() ||
-"YOUR NAME";
-
-ctx.fillStyle="#000080";
-
-ctx.font=
-"bold 34px Arial";
-
-ctx.textAlign="center";
-
-ctx.fillText(
-personName.toUpperCase(),
+x.fillText(
+(n.value.trim()||"YOUR NAME").toUpperCase(),
 px+pw/2,
 465
 );
 
 
-/* Bottom message */
+x.fillStyle="#172033";
+x.font="bold 31px Arial";
 
-ctx.fillStyle="#172033";
-
-ctx.font=
-"bold 31px Arial";
-
-ctx.fillText(
+x.fillText(
 "Happy 80th Independence Day!",
-600,
+W/2,
 570
 );
 
-ctx.fillStyle="#138808";
 
-ctx.font=
-"bold 30px Arial";
+x.fillStyle="#138808";
+x.font="bold 30px Arial";
 
-ctx.fillText(
+x.fillText(
 "I Love My India.",
-600,
+W/2,
 618
 );
 
-ctx.textAlign="left";
-
-
-/* Tricolor decoration */
-
-const lx=470;
-const ly=648;
-const lw=260;
-
-ctx.fillStyle="#FF9933";
-
-ctx.fillRect(
-lx,
-ly,
-lw/3,
-7
-);
-
-ctx.fillStyle="#000080";
-
-ctx.fillRect(
-lx+lw/3,
-ly,
-lw/3,
-7
-);
-
-ctx.fillStyle="#138808";
-
-ctx.fillRect(
-lx+(lw*2/3),
-ly,
-lw/3,
-7
-);
+x.textAlign="left";
 
 }
 
 
-/* Name typing */
-
-nameInput.addEventListener(
-"input",
-drawCard
-);
+n.oninput=draw;
 
 
-/* Photo upload */
+f.onchange=e=>{
 
-photoInput.addEventListener(
-"change",
-function(event){
+let r=new FileReader;
 
-const file =
-event.target.files[0];
+r.onload=v=>{
 
-if(!file){
-return;
-}
+let z=new Image;
 
-const reader =
-new FileReader();
+z.onload=()=>{
 
-reader.onload =
-function(e){
-
-const image =
-new Image();
-
-image.onload =
-function(){
-
-userPhoto=image;
-
-drawCard();
+img=z;
+draw();
 
 };
 
-image.src =
-e.target.result;
+z.src=v.target.result;
 
 };
 
-reader.readAsDataURL(file);
+r.readAsDataURL(e.target.files[0]);
 
-}
-);
-
-
-/* Reset */
-
-document
-.getElementById("reset")
-.addEventListener(
-"click",
-function(){
-
-nameInput.value="";
-
-photoInput.value="";
-
-userPhoto=null;
-
-drawCard();
-
-}
-);
+};
 
 
-/* Download */
+document.getElementById("reset").onclick=()=>{
 
-document
-.getElementById("download")
-.addEventListener(
-"click",
-function(){
+n.value="";
+f.value="";
+img=null;
 
-const link =
-document.createElement("a");
+draw();
 
-const person =
-nameInput.value.trim() ||
-"My-Card";
-
-link.download =
-person.replace(
-/[^a-z0-9]+/gi,
-"-"
-)
-+
-"-80th-Independence-Day-2026.png";
-
-link.href =
-canvas.toDataURL(
-"image/png"
-);
-
-document.body.appendChild(link);
-
-link.click();
-
-document.body.removeChild(link);
-
-}
-);
+};
 
 
-/* Initial card */
+document.getElementById("download").onclick=()=>{
 
-drawCard();
+let a=document.createElement("a");
+
+a.download="80th-Independence-Day-2026.png";
+
+a.href=c.toDataURL("image/png");
+
+a.click();
+
+};
+
+
+draw();
 
 </script>
 
